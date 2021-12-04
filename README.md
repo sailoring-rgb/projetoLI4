@@ -9,6 +9,7 @@ Classificação do projeto: .../20
 
 - Ana Murta (@AnaMurta10)
 - Ana Henriques (@AnaHenriques01)
-- Leonardo Freitas
-- Rui Coelho
-- Tiago Carneiro
+- Leonardo Freitas (@Leonardo1924)
+- Rui Coelho (@ruipgcoelho)
+- Tiago Carneiro (@TiagoAndreLecaCarneiro)
+
