@@ -53,18 +53,23 @@ public class User {
     public User clone(){ return new User(this); }
 
     public void add_plan(Plan plan){
-
+        this.plans.put(plan.getName(),plan.clone());
     }
 
     public void remove_plan(String planName){
-
+        if(this.plans.containsKey(planName)){
+            this.plans.remove(planName);
+        }
     }
 
     public void add_favourite(String placeName){
-
+        Review rev = new Review();
+        this.reviews.put(placeName, rev);
     }
 
     public void remove_favourite(String placeName){
-
+        if(this.reviews.containsKey(placeName)){
+            this.reviews.remove(placeName);
+        }
     }
 }

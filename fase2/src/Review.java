@@ -5,6 +5,13 @@ public class Review {
     private float classification;
     private String comment;
 
+    public Review(){
+        this.userId = "";
+        this.placeId = "";
+        this.classification = 0;
+        this.comment = "";
+    }
+
     public Review(String userId, String placeId, float classification, String comment){
         this.userId = userId;
         this.placeId = placeId;
