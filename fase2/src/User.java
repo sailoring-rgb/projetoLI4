@@ -1,8 +1,9 @@
 import javax.xml.stream.Location;
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class User {
+public class User implements Reviewable{
 
     private String name;
     private String id;
@@ -11,8 +12,9 @@ public class User {
     private Location location;
     private Map<String,Plan> plans; //key->name
     private Map<String,Review> reviews; //key->placeName
+    private List<Place> favourites;
 
-    public User(String name, String id, String password, String email, Location location, Map<String,Plan> plans, Map<String,Review> reviews){
+    public User(String name, String id, String password, String email, Location location, Map<String,Plan> plans, Map<String,Review> reviews, List<Place> favourites){
         this.name = name;
         this.id = id;
         this.password = password;
@@ -20,6 +22,7 @@ public class User {
         this.location = location;
         this.plans = plans.entrySet().stream().collect(Collectors.toMap(e->e.getKey(), e->e.getValue().clone()));
         this.reviews = reviews.entrySet().stream().collect(Collectors.toMap(e->e.getKey(), e->e.getValue().clone()));
+        this.favourites = favourites;
     }
 
     public User(User user){
@@ -30,6 +33,7 @@ public class User {
         this.location = user.getLocation();
         this.plans = user.getPlans();
         this.reviews = user.getReviews();
+        this.favourites = user.getFavourites();
     }
 
     public String getName(){ return this.name; }
@@ -50,6 +54,8 @@ public class User {
         return this.reviews.entrySet().stream().collect(Collectors.toMap(e->e.getKey(), e-> e.getValue().clone()));
     }
 
+    public List<Place> getFavourites(){ return this.favourites; }
+
     public User clone(){ return new User(this); }
 
     public void add_plan(Plan plan){
@@ -63,13 +69,15 @@ public class User {
     }
 
     public void add_favourite(String placeName){
-        Review rev = new Review();
-        this.reviews.put(placeName, rev);
+        Place place = new Place(placeName);
+        this.favourites.add(place);
     }
 
     public void remove_favourite(String placeName){
-        if(this.reviews.containsKey(placeName)){
-            this.reviews.remove(placeName);
+        for(Place p : this.favourites){
+            if(p.getName().equals(placeName)){
+                this.favourites.remove(p);
+            }
         }
     }
 }

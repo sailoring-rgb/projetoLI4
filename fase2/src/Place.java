@@ -11,6 +11,17 @@ public class Place implements Reviewable{
     private String city;
     private Map<String,Review> reviews;  // chave: userId, objeto: review
 
+    // ainda falta alterar as variaveis, exceto a variavel name, porque o resto das variaveis penso que temos que
+    //ser nós a escrever
+    public Place(String name){
+        this.id = "";
+        this.name = name;
+        this.category = "";
+        //this.location = null;
+        this.city = "";
+        this.reviews = new HashMap<>();
+    }
+
     public Place(String id,String name,String category,Location location,String city,Map<String,Review> reviews){
         this.id = id;
         this.name = name;
