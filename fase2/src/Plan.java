@@ -78,7 +78,7 @@ public class Plan {
     public void editaPlaceFromPlano(String placeName, LocalTime inicio, LocalTime fim){
         for(PlacePlanneable p : this.places){
             if (p.getName().equals(placeName)){
-                p.atualizaPlano(inicio,fim); // Implementar método em PlacePlanneable: deve substituir as horas ao plano
+                p.atualizaPlano(inicio,fim);
                 break;
             }
         }

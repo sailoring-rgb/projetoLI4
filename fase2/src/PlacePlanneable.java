@@ -25,4 +25,9 @@ public class PlacePlanneable extends Place{
     public LocalTime getFinishTime(){
         return this.finish_time;
     }
+
+    public void atualizaPlano(LocalTime inicio, LocalTime fim) {
+        this.start_time = inicio;
+        this.finish_time = fim;
+    }
 }
