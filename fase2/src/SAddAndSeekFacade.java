@@ -6,5 +6,18 @@ public class SAddAndSeekFacade implements IGestAddAndSeek{
         return false;
     }
 
+    @Override
+    public boolean login(String name, String password) {
+        return false;
+    }
 
+    @Override
+    public boolean register(String name, String password, String email) {
+        return false;
+    }
+
+    @Override
+    public void logout() {
+
+    }
 }
