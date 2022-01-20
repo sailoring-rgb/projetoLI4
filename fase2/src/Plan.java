@@ -43,9 +43,7 @@ public class Plan {
         return this.city;
     }
 
-    public Plan clone(){
-        return new Plan(this);
-    }
+    public Plan clone(){ return new Plan(this);}
 }
 
 

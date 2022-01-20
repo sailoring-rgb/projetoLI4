@@ -18,8 +18,8 @@ public class User {
         this.password = password;
         this.email = email;
         this.location = location;
-        this.plans = plans.entrySet().stream().collect(Collectors.toMap(e->getKey(), e->getValue().clone()));
-        this.reviews = reviews.entrySet().stream().collect(Collectors.toMap(e->getKey(), e->getValue().clone()));
+        this.plans = plans.entrySet().stream().collect(Collectors.toMap(e->e.getKey(), e->e.getValue().clone()));
+        this.reviews = reviews.entrySet().stream().collect(Collectors.toMap(e->e.getKey(), e->e.getValue().clone()));
     }
 
     public User(User user){
@@ -32,33 +32,25 @@ public class User {
         this.reviews = user.getReviews();
     }
 
-    public String getName(){
-        return this.name;
-    }
+    public String getName(){ return this.name; }
 
-    public String getId(){
-        return this.id;
-    }
+    public String getId(){ return this.id; }
 
-    public String getPassword(){
-        return this.password;
-    }
+    public String getPassword(){ return this.password; }
 
-    public String getEmail(){
-        return this.email;
-    }
+    public String getEmail(){ return this.email; }
 
-    public Location getLocation(){
-        return this.location;
-    }
+    public Location getLocation(){ return this.location; }
 
     public Map<String,Plan> getPlans(){
         return this.plans.entrySet().stream().collect(Collectors.toMap(e->e.getKey(), e-> e.getValue().clone()));
     }
 
-    public Map<String,Plan> getReviews(){
+    public Map<String,Review> getReviews(){
         return this.reviews.entrySet().stream().collect(Collectors.toMap(e->e.getKey(), e-> e.getValue().clone()));
     }
+
+    public User clone(){ return new User(this); }
 
     public void add_plan(Plan plan){
 
