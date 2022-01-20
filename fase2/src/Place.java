@@ -3,7 +3,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class Place {
+public class Place implements Reviewable{
     private String id;
     private String name;
     private String category;
