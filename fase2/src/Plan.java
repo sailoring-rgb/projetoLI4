@@ -1,6 +1,8 @@
+import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Plan {
     private String name;
@@ -53,6 +55,34 @@ public class Plan {
     }
 
     public Plan clone(){ return new Plan(this);}
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Plan plan = (Plan) o;
+        return Objects.equals(name, plan.name) && Objects.equals(start_time, plan.start_time)
+                && Objects.equals(finish_time, plan.finish_time) && Objects.equals(day, plan.day)
+                && Objects.equals(city, plan.city) && Objects.equals(places, plan.places);
+    }
+
+    public void addPlaceToPlan(PlacePlanneable p){
+        if (this.places == null) this.places = new ArrayList<>();
+        this.places.add(p);
+    }
+
+    public void removePlaceFromPlan(PlacePlanneable p){
+        this.places.remove(p);
+    }
+
+    public void editaPlaceFromPlano(String placeName, LocalTime inicio, LocalTime fim){
+        for(PlacePlanneable p : this.places){
+            if (p.getName().equals(placeName)){
+                p.atualizaPlano(inicio,fim); // Implementar método em PlacePlanneable: deve substituir as horas ao plano
+                break;
+            }
+        }
+    }
 }
 
 
