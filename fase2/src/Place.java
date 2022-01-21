@@ -3,7 +3,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class Place implements Reviewable{
+public class Place implements Reviewable {
     private String id;
     private String name;
     private String category;
@@ -22,7 +22,7 @@ public class Place implements Reviewable{
         this.reviews = new HashMap<>();
     }
 
-    public Place(String id,String name,String category,Location location,String city,Map<String,Review> reviews){
+    public Place(String id,String name,String category,Location location,String city,Map<String, Review> reviews){
         this.id = id;
         this.name = name;
         this.category = category;
@@ -60,7 +60,16 @@ public class Place implements Reviewable{
         return this.city;
     }
 
-    public Map<String,Review> getReviews(){
+    public float calculateClassification(){
+        float total = 0;
+        int size = reviews.size();
+        for(Review rev: reviews.values()){
+            total += rev.getClassification();
+        }
+        return total / size;
+    }
+
+    public Map<String, Review> getReviews(){
         return this.reviews.entrySet().stream().collect(Collectors.toMap(e->e.getKey(), e-> e.getValue().clone()));
     }
 

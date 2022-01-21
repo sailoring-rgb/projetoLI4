@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class User implements Reviewable{
+public class User implements Reviewable {
 
     private String name;
     private String id;
