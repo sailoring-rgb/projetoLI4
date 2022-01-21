@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class User implements Reviewable {
+public class User implements Reviewable{
 
     private String name;
     private String id;
@@ -13,6 +13,13 @@ public class User implements Reviewable {
     private Map<String,Plan> plans; //key->name
     private Map<String,Review> reviews; //key->placeName
     private List<Place> favourites;
+
+    public User(String name, String id, String password, String email){
+        this.name = name;
+        this.id = id;
+        this.password = password;
+        this.email = email;
+    }
 
     public User(String name, String id, String password, String email, Location location, Map<String,Plan> plans, Map<String,Review> reviews, List<Place> favourites){
         this.name = name;
@@ -77,6 +84,14 @@ public class User implements Reviewable {
         for(Place p : this.favourites){
             if(p.getName().equals(placeName)){
                 this.favourites.remove(p);
+            }
+        }
+    }
+
+    public void remove_review(String placeId){
+        for(Map.Entry<String,Review> rev : this.reviews.entrySet()){
+            if(rev.getValue().getPlaceId().equals(placeId)){
+                this.reviews.remove(rev.getKey(),rev.getValue());
             }
         }
     }
