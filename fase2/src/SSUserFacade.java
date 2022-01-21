@@ -1,6 +1,4 @@
-import java.time.LocalDate;
-import java.time.LocalTime;
-import java.util.ArrayList;
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -39,7 +37,7 @@ public class SSUserFacade implements IGestUser{
     }
 
     @Override
-    public boolean create_plan(String userId, String name, LocalTime start_time, LocalTime finish_time, String day, String city) {
+    public boolean create_plan(String userId, String name, LocalDateTime start_time, LocalDateTime finish_time, String day, String city) {
         //falta validar porcarias
         if(this.users.containsKey(userId)){
             Plan plan = new Plan(userId,name,start_time,finish_time,day,city);

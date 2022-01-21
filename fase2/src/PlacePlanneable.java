@@ -1,12 +1,12 @@
 import javax.xml.stream.Location;
-import java.time.LocalTime;
+import java.time.LocalDateTime;
 import java.util.Map;
 
 public class PlacePlanneable extends Place {
-    private LocalTime start_time;
-    private LocalTime finish_time;
+    private LocalDateTime start_time;
+    private LocalDateTime finish_time;
 
-    public PlacePlanneable(String id, String name, String category, Location location, String city, Map<String, Review> reviews, LocalTime start_time, LocalTime finish_time){
+    public PlacePlanneable(String id, String name, String category, Location location, String city, Map<String, Review> reviews, LocalDateTime start_time, LocalDateTime finish_time){
         super(id,name,category,location,city,reviews);
         this.start_time = start_time;
         this.finish_time = finish_time;
@@ -18,15 +18,15 @@ public class PlacePlanneable extends Place {
         this.finish_time = pp.getFinishTime();
     }
 
-    public LocalTime getStartTime(){
+    public LocalDateTime getStartTime(){
         return this.start_time;
     }
 
-    public LocalTime getFinishTime(){
+    public LocalDateTime getFinishTime(){
         return this.finish_time;
     }
 
-    public void atualizaPlano(LocalTime inicio, LocalTime fim) {
+    public void atualizaPlano(LocalDateTime inicio, LocalDateTime fim) {
         this.start_time = inicio;
         this.finish_time = fim;
     }

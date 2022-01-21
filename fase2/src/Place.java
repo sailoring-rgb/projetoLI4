@@ -83,4 +83,8 @@ public class Place implements Reviewable {
     public Place clone(){
         return new Place(this);
     }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
 }

@@ -1,5 +1,4 @@
-import java.sql.Time;
-import java.time.LocalTime;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -7,13 +6,13 @@ import java.util.Objects;
 public class Plan {
     private String userId;
     private String name;
-    private LocalTime start_time;
-    private LocalTime finish_time;
+    private LocalDateTime start_time;
+    private LocalDateTime finish_time;
     private String day;
     private String city;
     private List<PlacePlanneable> places;
 
-    public Plan(String userId,String name,LocalTime start_time,LocalTime finish_time,String day,String city){
+    public Plan(String userId,String name,LocalDateTime start_time,LocalDateTime finish_time,String day,String city){
         this.userId = userId;
         this.name = name;
         this.start_time = start_time;
@@ -22,7 +21,7 @@ public class Plan {
         this.city = city;
     }
 
-    public Plan(String userId,String name,LocalTime start_time,LocalTime finish_time,String day,String city,List<PlacePlanneable> places){
+    public Plan(String userId, String name, LocalDateTime start_time, LocalDateTime finish_time, String day, String city, List<PlacePlanneable> places){
         this.userId = userId;
         this.name = name;
         this.start_time = start_time;
@@ -42,11 +41,11 @@ public class Plan {
         this.places = plan.getPlaces();
     }
 
-    public Plan(String userId,String name, Time start_time, Time finish_time, String city) {
+    public Plan(String name, LocalDateTime start_time, LocalDateTime finish_time, String city,String userId) {
         this.userId = userId;
         this.name = name;
-        this.start_time = start_time.toLocalTime();
-        this.finish_time = finish_time.toLocalTime();
+        this.start_time = start_time;
+        this.finish_time = finish_time;
         this.city = city;
     }
 
@@ -58,11 +57,11 @@ public class Plan {
         return this.name;
     }
 
-    public LocalTime getStartTime(){
+    public LocalDateTime getStartTime(){
         return this.start_time;
     }
 
-    public LocalTime getFinishTime(){
+    public LocalDateTime getFinishTime(){
         return this.finish_time;
     }
 
@@ -78,20 +77,21 @@ public class Plan {
         return this.places;
     }
 
-    public void setUserID(String userId){
-        this.userId = userId;
-    }
-
     public Plan clone(){ return new Plan(this);}
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Plan plan = (Plan) o;
-        return Objects.equals(userId, plan.userId) && Objects.equals(name, plan.name) && Objects.equals(start_time, plan.start_time)
-                && Objects.equals(finish_time, plan.finish_time) && Objects.equals(day, plan.day)
-                && Objects.equals(city, plan.city) && Objects.equals(places, plan.places);
+        return Objects.equals(userId, plan.userId) && Objects.equals(name, plan.name)
+                && Objects.equals(start_time, plan.start_time) && Objects.equals(finish_time, plan.finish_time)
+                && Objects.equals(day, plan.day) && Objects.equals(city, plan.city)
+                && Objects.equals(places, plan.places);
     }
 
     public void addPlaceToPlan(PlacePlanneable p){
@@ -103,7 +103,7 @@ public class Plan {
         this.places.remove(p);
     }
 
-    public void editaPlaceFromPlano(String placeName, LocalTime inicio, LocalTime fim){
+    public void editaPlaceFromPlano(String placeName, LocalDateTime inicio, LocalDateTime fim){
         for(PlacePlanneable p : this.places){
             if (p.getName().equals(placeName)){
                 p.atualizaPlano(inicio,fim);
