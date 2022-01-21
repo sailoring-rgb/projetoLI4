@@ -1,6 +1,8 @@
 package GuiaTuristicoLN;
 
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.Map;
 
 public class SAddAndSeekFacade implements IGestAddAndSeek{
     private String currentUser;
@@ -61,5 +63,32 @@ public class SAddAndSeekFacade implements IGestAddAndSeek{
 
     public void logout() {
         this.functional = false;
+    }
+
+
+    public void startUp() throws SQLException, ClassNotFoundException {
+        ConnectionDB database = new ConnectionDB();
+        Map<String,User> allUsers = database.loadUsers();
+        Map<String,Place> allPlaces = database.loadPlaces();
+        Map<String,Review> allReviews = database.loadReviews();
+        Map<String,Plan> allPlans = database.loadPlans();
+
+        for(Plan p : allPlans.values())
+            allUsers.get(p.getUserID()).add_plan(p);
+        for(Review r : allReviews.values()){
+            allPlaces.get(r.getPlaceId()).add_review(r);
+            allUsers.get(r.getUserId()).add_review(r);
+        }
+        database.closeConnectionDB();
+        this.ssUsers = new SSUserFacade(allUsers);
+        this.ssPlaces = new SSPlacesFacade(allPlaces);
+        // FALTA ADICIONAR AS REVIEWS E OS PLANOS, MAYBE (?)
+    }
+
+    public void shutDown() throws SQLException, ClassNotFoundException {
+        ConnectionDB database = new ConnectionDB();
+        database.saveUsers(this.ssUsers.getUsers());
+        database.savePlaces(this.ssPlaces.getPlaces());
+        // FALTA ADICIONAR AS REVIEWS E OS PLANOS,
     }
 }

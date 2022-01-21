@@ -5,7 +5,7 @@ import java.util.*;
 public class SSPlacesFacade implements IGestPlace {
     private Map<String,Place> places;  // chave: placeId, objeto: GuiaTuristicoLN.Place
 
-    public SSPlacesFacade(Map<String, User> users){
+    public SSPlacesFacade(Map<String, Place> places){
         this.places = new HashMap<>(places);
     }
 
@@ -17,8 +17,8 @@ public class SSPlacesFacade implements IGestPlace {
         return this.places;
     }
 
-    public TreeSet<Place> placesOfCity(String city){
-        TreeSet<Place> placesOfCity = new TreeSet<>();
+    public Set<Place> placesOfCity(String city){
+        Set<Place> placesOfCity = new TreeSet<>();
         for(Place pl: places.values()){
             if(pl.getCity().equals(city))
                 placesOfCity.add(pl);
