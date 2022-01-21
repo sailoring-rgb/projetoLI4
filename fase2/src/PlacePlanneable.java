@@ -6,7 +6,7 @@ public class PlacePlanneable extends Place {
     private LocalDateTime start_time;
     private LocalDateTime finish_time;
 
-    public PlacePlanneable(String id, String name, String category, Location location, String city, Map<String, Review> reviews, LocalDateTime start_time, LocalDateTime finish_time){
+    public PlacePlanneable(String id, String name, String category, String location, String city, Map<String, Review> reviews, LocalDateTime start_time, LocalDateTime finish_time){
         super(id,name,category,location,city,reviews);
         this.start_time = start_time;
         this.finish_time = finish_time;

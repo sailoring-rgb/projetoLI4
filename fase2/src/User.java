@@ -9,7 +9,7 @@ public class User implements Reviewable{
     private String id;
     private String password;
     private String email;
-    private Location location;
+    private String location;
     private Map<String,Plan> plans; //key->name
     private Map<String,Review> reviews; //key->placeId
     private List<Place> favourites;
@@ -26,9 +26,10 @@ public class User implements Reviewable{
         this.id = id;
         this.password = password;
         this.email = email;
+        this.location = location;
     }
 
-    public User(String name, String id, String password, String email, Location location, Map<String,Plan> plans, Map<String,Review> reviews, List<Place> favourites){
+    public User(String name, String id, String password, String email, String location, Map<String,Plan> plans, Map<String,Review> reviews, List<Place> favourites){
         this.name = name;
         this.id = id;
         this.password = password;
@@ -58,7 +59,7 @@ public class User implements Reviewable{
 
     public String getEmail(){ return this.email; }
 
-    public Location getLocation(){ return this.location; }
+    public String getLocation(){ return this.location; }
 
     public Map<String,Plan> getPlans(){
         return this.plans.entrySet().stream().collect(Collectors.toMap(e->e.getKey(), e-> e.getValue().clone()));
@@ -97,5 +98,17 @@ public class User implements Reviewable{
 
     public void setPassword(String newPassword){
         this.password = newPassword;
+    }
+
+    @Override
+    public void add_review(Review r) {
+        this.reviews.put(r.getPlaceId(),r);
+    }
+
+    @Override
+    public void remove_review(String userId, String placeId) {
+        for (Review r : this.reviews.values()){
+            if(r.getPlaceId().equals(placeId) && r.getUserId().equals(userId)) this.reviews.remove(r.getUserId());
+        }
     }
 }

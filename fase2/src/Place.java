@@ -7,7 +7,7 @@ public class Place implements Reviewable {
     private String id;
     private String name;
     private String category;
-    private Location location;
+    private String location;
     private String city;
     private Map<String,Review> reviews;  // chave: userId, objeto: review
 
@@ -22,7 +22,7 @@ public class Place implements Reviewable {
         this.reviews = new HashMap<>();
     }
 
-    public Place(String id,String name, String category,Location location,String city,Map<String, Review> reviews){
+    public Place(String id,String name, String category, String location, String city, Map<String, Review> reviews){
         this.id = id;
         this.name = name;
         this.category = category;
@@ -59,7 +59,7 @@ public class Place implements Reviewable {
         return this.category;
     }
 
-    public Location getLocation(){
+    public String getLocation(){
         return this.location;
     }
 
@@ -86,5 +86,17 @@ public class Place implements Reviewable {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    @Override
+    public void add_review(Review r) {
+        this.reviews.put(r.getUserId(),r);
+    }
+
+    @Override
+    public void remove_review(String userId, String placeId) {
+        for (Review r : this.reviews.values()){
+            if(r.getPlaceId().equals(placeId) && r.getUserId().equals(userId)) this.reviews.remove(r.getUserId());
+        }
     }
 }

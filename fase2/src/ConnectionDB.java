@@ -76,7 +76,7 @@ public class ConnectionDB {
             preparedStatement.setString(1, u.getName());
             preparedStatement.setString(2, u.getPassword());
             preparedStatement.setString(3, u.getEmail());
-            preparedStatement.setString(4, "Braga");
+            preparedStatement.setString(4, u.getLocation());
             preparedStatement.setInt(5, Integer.parseInt(u.getId()));
             preparedStatement.setInt(6, Integer.parseInt(u.getId()));
             preparedStatement.executeUpdate();
@@ -90,7 +90,7 @@ public class ConnectionDB {
             preparedStatement.setString(1, p.getName());
             preparedStatement.setString(2, p.getId());
             preparedStatement.setString(3, p.getCategory());
-            preparedStatement.setString(4, "Braga");
+            preparedStatement.setString(4, p.getLocation());
             preparedStatement.setString(5, p.getCity());
             preparedStatement.setInt(6, Integer.parseInt(p.getId()));
             preparedStatement.setInt(7, Integer.parseInt(p.getId()));
