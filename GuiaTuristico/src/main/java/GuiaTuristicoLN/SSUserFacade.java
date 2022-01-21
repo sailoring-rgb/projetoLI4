@@ -1,10 +1,12 @@
+package GuiaTuristicoLN;
+
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class SSUserFacade implements IGestUser{
+public class SSUserFacade implements IGestUser {
     private Map<String,User> users;    // chave: userId, objeto: user
 
     public SSUserFacade(Map<String,User> users){

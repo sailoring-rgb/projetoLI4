@@ -1,3 +1,5 @@
+package GuiaTuristicoLN;
+
 public class Review {
 
     private String userId;

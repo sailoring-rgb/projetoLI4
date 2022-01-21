@@ -1,7 +1,9 @@
+package GuiaTuristicoLN;
+
 import java.util.*;
 
 public class SSPlacesFacade implements IGestPlace {
-    private Map<String,Place> places;  // chave: placeId, objeto: Place
+    private Map<String,Place> places;  // chave: placeId, objeto: GuiaTuristicoLN.Place
 
     public SSPlacesFacade(Map<String, User> users){
         this.places = new HashMap<>(places);
@@ -50,9 +52,9 @@ public class SSPlacesFacade implements IGestPlace {
     public Set<Place> filter_by_distance(float distance_max){
         /**
          * FALTA IMPLEMENTAR A CLASSE LOCATION
-        Set<Place> placesByCategory = new TreeSet<Place>();
+        Set<GuiaTuristicoLN.Place> placesByCategory = new TreeSet<GuiaTuristicoLN.Place>();
         // distance is valid?
-        for(Place pl: places.values()){
+        for(GuiaTuristicoLN.Place pl: places.values()){
             if(pl.getLocation().equals(category))
                 placesByCategory.add(pl);
         }

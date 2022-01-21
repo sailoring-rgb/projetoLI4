@@ -1,3 +1,5 @@
+package GuiaTuristicoLN;
+
 import java.sql.*;
 import java.text.ParseException;
 import java.util.HashMap;
@@ -16,7 +18,7 @@ public class ConnectionDB {
     }
 
     // Loading data from database when it starts up
-    public Map<String,User> loadUsers() throws SQLException {
+    public Map<String, User> loadUsers() throws SQLException {
         Statement statement = this.connection.createStatement();
         ResultSet rs = statement.executeQuery(" SELECT * FROM users");
         Map<String, User> res = new HashMap<>();

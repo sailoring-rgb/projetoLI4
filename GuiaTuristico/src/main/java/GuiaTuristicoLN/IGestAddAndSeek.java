@@ -1,3 +1,5 @@
+package GuiaTuristicoLN;
+
 import java.io.IOException;
 
 public interface IGestAddAndSeek {

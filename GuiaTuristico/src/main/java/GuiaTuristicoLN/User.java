@@ -1,17 +1,18 @@
-import javax.xml.stream.Location;
+package GuiaTuristicoLN;
+
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class User implements Reviewable{
+public class User implements Reviewable {
 
     private String name;
     private String id;
     private String password;
     private String email;
     private String location;
-    private Map<String,Plan> plans; //key->name
-    private Map<String,Review> reviews; //key->placeId
+    private Map<String, Plan> plans; //key->name
+    private Map<String, Review> reviews; //key->placeId
     private List<Place> favourites;
 
     public User(String name, String id, String password, String email){
@@ -29,7 +30,7 @@ public class User implements Reviewable{
         this.location = location;
     }
 
-    public User(String name, String id, String password, String email, String location, Map<String,Plan> plans, Map<String,Review> reviews, List<Place> favourites){
+    public User(String name, String id, String password, String email, String location, Map<String, Plan> plans, Map<String, Review> reviews, List<Place> favourites){
         this.name = name;
         this.id = id;
         this.password = password;
@@ -61,11 +62,11 @@ public class User implements Reviewable{
 
     public String getLocation(){ return this.location; }
 
-    public Map<String,Plan> getPlans(){
+    public Map<String, Plan> getPlans(){
         return this.plans.entrySet().stream().collect(Collectors.toMap(e->e.getKey(), e-> e.getValue().clone()));
     }
 
-    public Map<String,Review> getReviews(){
+    public Map<String, Review> getReviews(){
         return this.reviews.entrySet().stream().collect(Collectors.toMap(e->e.getKey(), e-> e.getValue().clone()));
     }
 
