@@ -1,4 +1,6 @@
 import java.sql.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ConnectionDB {
     private Connection connection;
@@ -8,23 +10,62 @@ public class ConnectionDB {
         this.connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/GuiaTuristico","root","root");
     }
 
-    public ResultSet queryUsers(String operationType) throws SQLException {
+    public void closeConnectionDB() throws SQLException {
+        this.connection.close();
+    }
+
+    // Loading data from database when it starts up
+    public Map<String,User> loadUsers() throws SQLException {
         Statement statement = this.connection.createStatement();
-        ResultSet rs = statement.executeQuery(operationType+ " * FROM users");
-        return rs;
-    }
-
-    public String printSelectUsers(ResultSet rs) throws SQLException {
-        StringBuffer sb = new StringBuffer();
-        while(rs.next()){
-            sb.append(rs.getInt(1)).append(" ").
-                    append(rs.getString(2)).append(" ").
-                    append(rs.getString(3)).append(" ").
-                    append(rs.getString(4)).append(" ").
-                    append(rs.getString(5)).append(" ").append("\n");
+        ResultSet rs = statement.executeQuery(" SELECT * FROM users");
+        Map<String, User> res = new HashMap<>();
+        while(rs.next()) {
+            User u = new User(rs.getString(2), String.valueOf(rs.getInt(1)),
+                    rs.getString(3), rs.getString(4), rs.getString(5));
+            res.put(String.valueOf(rs.getInt(1)), u);
         }
-        return sb.toString();
+        statement.close();
+        return res;
     }
 
+    public Map<String,Place> loadPlaces() throws SQLException{
+        Statement statement = this.connection.createStatement();
+        ResultSet rs = statement.executeQuery("SELECT * FROM places");
+        Map<String,Place> res = new HashMap<>();
+        while(rs.next()){
+            Place p = new Place(String.valueOf(rs.getInt(1)), rs.getString(2),
+                    rs.getString(4),rs.getString(5),rs.getString(6));
+            res.put(String.valueOf(rs.getInt(1)), p);
+        }
+        statement.close();
+        return res;
+    }
 
+    public Map<String, Plan> loadPlans() throws SQLException{
+        Statement statement = this.connection.createStatement();
+        ResultSet rs = statement.executeQuery("SELECT * FROM plans");
+        Map<String, Plan> res = new HashMap<>();
+        while(rs.next()){
+            Plan p = new Plan(rs.getString(1), rs.getTime(2),
+                    rs.getTime(3),rs.getString(4));
+            res.put(String.valueOf(rs.getInt(5)),p);
+        }
+        statement.close();
+        return res;
+    }
+
+    public Map<String,Review> loadReviews() throws SQLException{
+        Statement statement = this.connection.createStatement();
+        ResultSet rs = statement.executeQuery("SELECT  * FROM reviews");
+        Map<String, Review> res = new HashMap<>();
+        while(rs.next()){
+            Review r = new Review(String.valueOf(rs.getInt(4)),String.valueOf(rs.getInt(5)),
+                    Float.parseFloat(rs.getString(2)), rs.getString(3));
+            res.put(String.valueOf(rs.getInt(4)),r);
+        }
+        statement.close();
+        return res;
+    }
+
+    //Storing data to database when it shuts down
 }

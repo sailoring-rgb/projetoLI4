@@ -1,3 +1,4 @@
+import java.sql.Time;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +36,13 @@ public class Plan {
         this.day = plan.getDay();
         this.city = plan.getCity();
         this.places = plan.getPlaces();
+    }
+
+    public Plan(String name, Time start_time, Time finish_time, String city) {
+        this.name = name;
+        this.start_time = start_time.toLocalTime();
+        this.finish_time = finish_time.toLocalTime();
+        this.city = city;
     }
 
     public String getName(){

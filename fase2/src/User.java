@@ -21,6 +21,13 @@ public class User implements Reviewable{
         this.email = email;
     }
 
+    public User(String name, String id, String password, String email, String location){
+        this.name = name;
+        this.id = id;
+        this.password = password;
+        this.email = email;
+    }
+
     public User(String name, String id, String password, String email, Location location, Map<String,Plan> plans, Map<String,Review> reviews, List<Place> favourites){
         this.name = name;
         this.id = id;
@@ -69,10 +76,9 @@ public class User implements Reviewable{
         this.plans.put(plan.getName(),plan.clone());
     }
 
-    /**
-    public void remove_plan(String planName){
-        if(this.plans.containsKey(planName)){
-            this.plans.remove(planName);
+    public void remove_plan(String planID){
+        if(this.plans.containsKey(planID)){
+            this.plans.remove(planID);
         }
     }
 
@@ -81,12 +87,11 @@ public class User implements Reviewable{
         this.favourites.add(place);
     }
 
-    public void remove_favourite(String placeName){
-        for(Place p : this.favourites){
-            if(p.getName().equals(placeName)){
+    public void remove_favourite(String placeName) {
+        for (Place p : this.favourites) {
+            if (p.getName().equals(placeName)) {
                 this.favourites.remove(p);
             }
         }
-    }*/
-
+    }
 }

@@ -22,7 +22,7 @@ public class Place implements Reviewable {
         this.reviews = new HashMap<>();
     }
 
-    public Place(String id,String name,String category,Location location,String city,Map<String, Review> reviews){
+    public Place(String id,String name, String category,Location location,String city,Map<String, Review> reviews){
         this.id = id;
         this.name = name;
         this.category = category;
@@ -38,6 +38,13 @@ public class Place implements Reviewable {
         this.location = place.getLocation();
         this.city = place.getCity();
         this.reviews = place.getReviews();
+    }
+
+    public Place(String id, String name, String category, String location, String city) {
+        this.id = id;
+        this.name = name;
+        this.category = category;
+        this.city = city;
     }
 
     public String getId(){
