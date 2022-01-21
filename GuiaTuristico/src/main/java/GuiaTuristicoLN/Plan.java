@@ -21,6 +21,7 @@ public class Plan {
         this.finish_time = finish_time;
         this.day = day;
         this.city = city;
+        this.places = new ArrayList<>();
     }
 
     public Plan(String userId, String name, LocalDateTime start_time, LocalDateTime finish_time, String day, String city, List<PlacePlanneable> places){
@@ -49,6 +50,8 @@ public class Plan {
         this.start_time = start_time;
         this.finish_time = finish_time;
         this.city = city;
+        this.day = start_time.getDayOfWeek().toString();
+        this.places = new ArrayList<>();
     }
 
     public String getUserID(){
@@ -90,10 +93,12 @@ public class Plan {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Plan plan = (Plan) o;
-        return Objects.equals(userId, plan.userId) && Objects.equals(name, plan.name)
-                && Objects.equals(start_time, plan.start_time) && Objects.equals(finish_time, plan.finish_time)
-                && Objects.equals(day, plan.day) && Objects.equals(city, plan.city)
-                && Objects.equals(places, plan.places);
+        return Objects.equals(userId, plan.userId) && Objects.equals(name, plan.name) && Objects.equals(start_time, plan.start_time) && Objects.equals(finish_time, plan.finish_time) && Objects.equals(day, plan.day) && Objects.equals(city, plan.city) && Objects.equals(places, plan.places);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(userId, name, start_time, finish_time, day, city, places);
     }
 
     public void addPlaceToPlan(PlacePlanneable p){

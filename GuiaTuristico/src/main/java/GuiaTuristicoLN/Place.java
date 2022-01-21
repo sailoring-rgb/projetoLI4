@@ -2,9 +2,10 @@ package GuiaTuristicoLN;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
-public class Place implements Reviewable {
+public class Place implements Reviewable, Comparable {
     private String id;
     private String name;
     private String category;
@@ -12,13 +13,11 @@ public class Place implements Reviewable {
     private String city;
     private Map<String,Review> reviews;  // chave: userId, objeto: review
 
-    // ainda falta alterar as variaveis, exceto a variavel name, porque o resto das variaveis penso que temos que
-    //ser nós a escrever
     public Place(String name){
         this.id = "";
         this.name = name;
         this.category = "";
-        //this.location = null;
+        this.location = "";
         this.city = "";
         this.reviews = new HashMap<>();
     }
@@ -46,6 +45,8 @@ public class Place implements Reviewable {
         this.name = name;
         this.category = category;
         this.city = city;
+        this.location = location;
+        this.reviews = new HashMap<>();
     }
 
     public String getId(){
@@ -85,10 +86,6 @@ public class Place implements Reviewable {
         return new Place(this);
     }
 
-    public void setCity(String city) {
-        this.city = city;
-    }
-
     @Override
     public void add_review(Review r) {
         this.reviews.put(r.getUserId(),r);
@@ -99,5 +96,19 @@ public class Place implements Reviewable {
         for (Review r : this.reviews.values()){
             if(r.getPlaceId().equals(placeId) && r.getUserId().equals(userId)) this.reviews.remove(r.getUserId());
         }
+    }
+
+    @Override
+    public int compareTo(Object that) {
+        Place p = (Place) that;
+        return this.id.compareTo(p.id);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Place place = (Place) o;
+        return Objects.equals(id, place.id) && Objects.equals(name, place.name) && Objects.equals(category, place.category) && Objects.equals(location, place.location) && Objects.equals(city, place.city) && Objects.equals(reviews, place.reviews);
     }
 }

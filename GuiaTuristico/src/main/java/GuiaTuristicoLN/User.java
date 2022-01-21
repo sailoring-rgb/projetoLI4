@@ -1,7 +1,6 @@
 package GuiaTuristicoLN;
 
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class User implements Reviewable {
@@ -20,6 +19,10 @@ public class User implements Reviewable {
         this.id = id;
         this.password = password;
         this.email = email;
+        this.location = null;
+        this.plans = new HashMap<>();
+        this.reviews = new HashMap<>();
+        this.favourites = new ArrayList<>();
     }
 
     public User(String name, String id, String password, String email, String location){
@@ -28,6 +31,9 @@ public class User implements Reviewable {
         this.password = password;
         this.email = email;
         this.location = location;
+        this.plans = new HashMap<>();
+        this.reviews = new HashMap<>();
+        this.favourites = new ArrayList<>();
     }
 
     public User(String name, String id, String password, String email, String location, Map<String, Plan> plans, Map<String, Review> reviews, List<Place> favourites){
@@ -111,5 +117,13 @@ public class User implements Reviewable {
         for (Review r : this.reviews.values()){
             if(r.getPlaceId().equals(placeId) && r.getUserId().equals(userId)) this.reviews.remove(r.getUserId());
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(name, user.name) && Objects.equals(id, user.id) && Objects.equals(password, user.password) && Objects.equals(email, user.email) && Objects.equals(location, user.location) && Objects.equals(plans, user.plans) && Objects.equals(reviews, user.reviews) && Objects.equals(favourites, user.favourites);
     }
 }

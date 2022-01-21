@@ -1,5 +1,7 @@
 package GuiaTuristicoLN;
 
+import java.util.Objects;
+
 public class Review {
 
     private String userId;
@@ -37,4 +39,12 @@ public class Review {
     public String getComment(){ return this.comment; }
 
     public Review clone(){ return new Review(this);}
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Review review = (Review) o;
+        return Float.compare(review.classification, classification) == 0 && Objects.equals(userId, review.userId) && Objects.equals(placeId, review.placeId) && Objects.equals(comment, review.comment);
+    }
 }

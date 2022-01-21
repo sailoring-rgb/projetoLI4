@@ -2,6 +2,7 @@ package GuiaTuristicoLN;
 
 import java.time.LocalDateTime;
 import java.util.Map;
+import java.util.Objects;
 
 public class PlacePlanneable extends Place {
     private LocalDateTime start_time;
@@ -30,5 +31,19 @@ public class PlacePlanneable extends Place {
     public void atualizaPlano(LocalDateTime inicio, LocalDateTime fim) {
         this.start_time = inicio;
         this.finish_time = fim;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if(!super.equals(o)) return false;
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PlacePlanneable that = (PlacePlanneable) o;
+        return Objects.equals(start_time, that.start_time) && Objects.equals(finish_time, that.finish_time);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(start_time, finish_time);
     }
 }

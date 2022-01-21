@@ -18,7 +18,7 @@ public class SSPlacesFacade implements IGestPlace {
     }
 
     public TreeSet<Place> placesOfCity(String city){
-        TreeSet<Place> placesOfCity = new TreeSet<Place>();
+        TreeSet<Place> placesOfCity = new TreeSet<>();
         for(Place pl: places.values()){
             if(pl.getCity().equals(city))
                 placesOfCity.add(pl);
@@ -28,8 +28,7 @@ public class SSPlacesFacade implements IGestPlace {
 
     @Override
     public Set<Place> filter_by_name(String name){
-        Set<Place> placesByName = new TreeSet<Place>();
-        // name is valid?
+        Set<Place> placesByName = new TreeSet<>();
         for(Place pl: places.values()){
             if(pl.getName().equals(name))
                 placesByName.add(pl);
@@ -39,8 +38,7 @@ public class SSPlacesFacade implements IGestPlace {
 
     @Override
     public Set<Place> filter_by_category(String category){
-        Set<Place> placesByCategory = new TreeSet<Place>();
-        // category is valid?
+        Set<Place> placesByCategory = new TreeSet<>();
         for(Place pl: places.values()){
             if(pl.getCategory().equals(category))
                 placesByCategory.add(pl);
@@ -65,8 +63,7 @@ public class SSPlacesFacade implements IGestPlace {
 
     @Override
     public Set<Place> filter_by_classification(float classification_min){
-        Set<Place> placesByClassification = new TreeSet<Place>();
-        // distance is valid?
+        Set<Place> placesByClassification = new TreeSet<>();
         for(Place pl: places.values()){
             if(pl.calculateClassification() >= classification_min)
                 placesByClassification.add(pl);
