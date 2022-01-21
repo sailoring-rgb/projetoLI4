@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.util.List;
 
 public class SAddAndSeekFacade implements IGestAddAndSeek{
     private String currentUser;
@@ -15,7 +16,23 @@ public class SAddAndSeekFacade implements IGestAddAndSeek{
          */
     }
 
-    public boolean create_review(String userId, String placeName, float classification, String comment) {
+    @Override
+    public boolean add_favourite(String userId, String placeId) {
+        if(this.ssUsers.getUsers().containsKey(userId)){
+            Place place = this.ssPlaces.getPlaces().get(placeId);
+            this.ssUsers.getUsers().get(userId).getFavourites().add(place.clone());
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean remove_favourite(String userId, String placeId) {
+        if(this.ssUsers.getUsers().containsKey(userId)){
+            Place place = this.ssPlaces.getPlaces().get(placeId);
+            this.ssUsers.getUsers().get(userId).getFavourites().remove(place);
+            return true;
+        }
         return false;
     }
 

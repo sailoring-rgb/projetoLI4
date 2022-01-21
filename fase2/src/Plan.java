@@ -11,6 +11,14 @@ public class Plan {
     private String city;
     private List<PlacePlanneable> places;
 
+    public Plan(String name,LocalTime start_time,LocalTime finish_time,String day,String city){
+        this.name = name;
+        this.start_time = start_time;
+        this.finish_time = finish_time;
+        this.day = day;
+        this.city = city;
+    }
+
     public Plan(String name,LocalTime start_time,LocalTime finish_time,String day,String city,List<PlacePlanneable> places){
         this.name = name;
         this.start_time = start_time;
