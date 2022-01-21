@@ -4,12 +4,14 @@ public class IgnoreThisClass {
     public static void main(String[] args) {
         try{
             ConnectionDB c = new ConnectionDB();
-            Map<String, Review> us = c.loadReviews();
-            for(Review u : us.values()) {
-                System.out.println(u.getUserId());
-                System.out.println(u.getPlaceId());
-                System.out.println(u.getClassification());
-                System.out.println(u.getComment());
+            Map<String, User> us = c.loadUsers();
+            User tmp = us.get("1");
+            tmp.setPassword("user");
+            us.put("1",tmp);
+            c.saveUsers(us);
+            Map<String, User> afterSave = c.loadUsers();
+            for(User u : afterSave.values()){
+                System.out.println(u.getPassword());
             }
         }  catch (Exception e){
             System.out.println(e);

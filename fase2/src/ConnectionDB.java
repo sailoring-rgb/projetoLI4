@@ -1,4 +1,5 @@
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -68,4 +69,16 @@ public class ConnectionDB {
     }
 
     //Storing data to database when it shuts down
+    public void saveUsers(Map<String,User> allUsers) throws SQLException {
+        PreparedStatement preparedStatement = this.connection.prepareStatement("UPDATE users SET name=? , password= ? , " +
+                "email=? , location=? WHERE id = ?");
+        for (User u: allUsers.values()) {
+            preparedStatement.setString(1,u.getName());
+            preparedStatement.setString(2,u.getPassword());
+            preparedStatement.setString(3,u.getEmail());
+            preparedStatement.setString(4,"Braga");
+            preparedStatement.setInt(5,Integer.parseInt(u.getId()));
+            preparedStatement.executeUpdate();
+        }
+    }
 }

@@ -94,4 +94,8 @@ public class User implements Reviewable{
             }
         }
     }
+
+    public void setPassword(String newPassword){
+        this.password = newPassword;
+    }
 }
