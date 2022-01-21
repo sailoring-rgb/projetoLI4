@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class Plan {
+    private String userId;
     private String name;
     private LocalTime start_time;
     private LocalTime finish_time;
@@ -12,7 +13,8 @@ public class Plan {
     private String city;
     private List<PlacePlanneable> places;
 
-    public Plan(String name,LocalTime start_time,LocalTime finish_time,String day,String city){
+    public Plan(String userId,String name,LocalTime start_time,LocalTime finish_time,String day,String city){
+        this.userId = userId;
         this.name = name;
         this.start_time = start_time;
         this.finish_time = finish_time;
@@ -20,7 +22,8 @@ public class Plan {
         this.city = city;
     }
 
-    public Plan(String name,LocalTime start_time,LocalTime finish_time,String day,String city,List<PlacePlanneable> places){
+    public Plan(String userId,String name,LocalTime start_time,LocalTime finish_time,String day,String city,List<PlacePlanneable> places){
+        this.userId = userId;
         this.name = name;
         this.start_time = start_time;
         this.finish_time = finish_time;
@@ -30,6 +33,7 @@ public class Plan {
     }
 
     public Plan(Plan plan){
+        this.userId = plan.getUserID();
         this.name = plan.getName();
         this.start_time = plan.getStartTime();
         this.finish_time = plan.getFinishTime();
@@ -38,11 +42,16 @@ public class Plan {
         this.places = plan.getPlaces();
     }
 
-    public Plan(String name, Time start_time, Time finish_time, String city) {
+    public Plan(String userId,String name, Time start_time, Time finish_time, String city) {
+        this.userId = userId;
         this.name = name;
         this.start_time = start_time.toLocalTime();
         this.finish_time = finish_time.toLocalTime();
         this.city = city;
+    }
+
+    public String getUserID(){
+        return this.userId;
     }
 
     public String getName(){
@@ -69,6 +78,10 @@ public class Plan {
         return this.places;
     }
 
+    public void setUserID(String userId){
+        this.userId = userId;
+    }
+
     public Plan clone(){ return new Plan(this);}
 
     @Override
@@ -76,7 +89,7 @@ public class Plan {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Plan plan = (Plan) o;
-        return Objects.equals(name, plan.name) && Objects.equals(start_time, plan.start_time)
+        return Objects.equals(userId, plan.userId) && Objects.equals(name, plan.name) && Objects.equals(start_time, plan.start_time)
                 && Objects.equals(finish_time, plan.finish_time) && Objects.equals(day, plan.day)
                 && Objects.equals(city, plan.city) && Objects.equals(places, plan.places);
     }

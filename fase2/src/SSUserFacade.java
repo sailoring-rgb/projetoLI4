@@ -42,7 +42,7 @@ public class SSUserFacade implements IGestUser{
     public boolean create_plan(String userId, String name, LocalTime start_time, LocalTime finish_time, String day, String city) {
         //falta validar porcarias
         if(this.users.containsKey(userId)){
-            Plan plan = new Plan(name,start_time,finish_time,day,city);
+            Plan plan = new Plan(userId,name,start_time,finish_time,day,city);
             this.users.get(userId).getPlans().put(name, plan);
         }
         return false;
