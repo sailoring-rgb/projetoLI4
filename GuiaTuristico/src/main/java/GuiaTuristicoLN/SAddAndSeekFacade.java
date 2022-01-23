@@ -80,8 +80,8 @@ public class SAddAndSeekFacade implements IGestAddAndSeek {
         this.ssUsers = new SSUserFacade(allUsers);
         this.ssPlaces = new SSPlacesFacade(allPlaces);
         for(User user: this.ssUsers.getUsers().values()){
-            Map<String,Plan> plansOfUser = new HashMap<>();
-            Map<String,Review> reviewsOfUser = new HashMap<>();
+            Map<String,Plan> plansOfUser = new HashMap<>();      // chave: userId
+            Map<String,Review> reviewsOfUser = new HashMap<>();  // chave: userId
 
             Plan plan = allPlans.get(user.getId());
             Review rev = allReviews.get(user.getId());
