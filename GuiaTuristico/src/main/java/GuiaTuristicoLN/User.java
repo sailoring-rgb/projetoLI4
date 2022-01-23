@@ -86,6 +86,14 @@ public class User implements Reviewable {
         return this.reviews.entrySet().stream().collect(Collectors.toMap(e -> e.getKey(), e -> e.getValue().clone()));
     }
 
+    public void setPlans(Map<String,Plan> plans){
+        this.plans = new HashMap<>(plans);
+    }
+
+    public void setReviews(Map<String,Review> revs){
+        this.reviews = new HashMap<>(revs);
+    }
+
     public List<Place> getFavourites() {
         return this.favourites;
     }

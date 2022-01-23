@@ -15,6 +15,13 @@ public class SSUserFacade implements IGestUser {
         this.users = db.loadUsers();
     }
 
+    public Map<String,Plan> loadPlansUser(Map<String,Plan> plans, String userId){
+        Map<String,Plan> plansOfUser = new HashMap<>();
+        Plan plan = plans.get(userId);
+        plansOfUser.put(plan.getName(),plan.clone());
+        return plansOfUser;
+    }
+
     public SSUserFacade(Map<String, User> users) throws SQLException, ClassNotFoundException {
         this.users = new HashMap<>(users);
     }

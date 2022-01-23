@@ -2,6 +2,8 @@ package GuiaTuristicoLN;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.text.ParseException;
+import java.util.HashMap;
 import java.util.Map;
 
 public class SAddAndSeekFacade implements IGestAddAndSeek {
@@ -10,11 +12,9 @@ public class SAddAndSeekFacade implements IGestAddAndSeek {
     private IGestUser ssUsers;
     private IGestPlace ssPlaces;
 
-    public SAddAndSeekFacade() throws SQLException, ClassNotFoundException {
+    public SAddAndSeekFacade(){
         this.currentUser = "";
         this.functional = true;
-        this.ssUsers = new SSUserFacade();
-        this.ssPlaces = new SSPlacesFacade();
     }
 
     @Override
@@ -59,19 +59,16 @@ public class SAddAndSeekFacade implements IGestAddAndSeek {
         return false;
     }
 
-    public void logout() throws SQLException, ClassNotFoundException {
-        ConnectionDB db = new ConnectionDB();
+    public void logout(){
         this.functional = false;
-        db.saveUsers(ssUsers.getUsers());
-        db.savePlaces(ssPlaces.getPlaces());
     }
-    
+
     public void startUp() throws SQLException, ClassNotFoundException {
         ConnectionDB database = new ConnectionDB();
-        Map<String, User> allUsers = database.loadUsers();
-        Map<String, Place> allPlaces = database.loadPlaces();
-        Map<String, Review> allReviews = database.loadReviews();
-        Map<String, Plan> allPlans = database.loadPlans();
+        Map<String,User> allUsers = database.loadUsers();
+        Map<String,Place> allPlaces = database.loadPlaces();
+        Map<String,Review> allReviews = database.loadReviews();
+        Map<String,Plan> allPlans = database.loadPlans();
 
         for (Plan p : allPlans.values())
             allUsers.get(p.getUserID()).add_plan(p);
@@ -82,13 +79,35 @@ public class SAddAndSeekFacade implements IGestAddAndSeek {
         database.closeConnectionDB();
         this.ssUsers = new SSUserFacade(allUsers);
         this.ssPlaces = new SSPlacesFacade(allPlaces);
-        // FALTA ADICIONAR AS REVIEWS E OS PLANOS, MAYBE (?)
+        for(User user: this.ssUsers.getUsers().values()){
+            Map<String,Plan> plansOfUser = new HashMap<>();
+            Map<String,Review> reviewsOfUser = new HashMap<>();
+
+            Plan plan = allPlans.get(user.getId());
+            Review rev = allReviews.get(user.getId());
+
+            plansOfUser.put(plan.getName(),plan.clone());
+            reviewsOfUser.put(rev.getPlaceId(),rev.clone());
+            user.setPlans(plansOfUser);
+            user.setReviews(reviewsOfUser);
+        }
     }
 
-    public void shutDown() throws SQLException, ClassNotFoundException {
+    public void shutDown() throws SQLException, ClassNotFoundException, ParseException {
         ConnectionDB database = new ConnectionDB();
         database.saveUsers(this.ssUsers.getUsers());
         database.savePlaces(this.ssPlaces.getPlaces());
-        // FALTA ADICIONAR AS REVIEWS E OS PLANOS,
+        for(User user: this.ssUsers.getUsers().values()){
+            Map<String,Plan> plansOfUser = new HashMap<>(); // chave: userId
+            Map<String,Review> reviewsOfUser = new HashMap<>(); // chave: userId
+            for(Plan plan: user.getPlans().values()){
+                plansOfUser.put(user.getId(),plan.clone());
+            }
+            for(Review rev: user.getReviews().values()){
+                reviewsOfUser.put(user.getId(),rev.clone());
+            }
+            database.savePlans(plansOfUser);
+            database.saveReviews(reviewsOfUser);
+        }
     }
 }
