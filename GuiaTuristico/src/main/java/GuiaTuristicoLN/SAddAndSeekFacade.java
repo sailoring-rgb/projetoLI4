@@ -10,13 +10,11 @@ public class SAddAndSeekFacade implements IGestAddAndSeek {
     private IGestUser ssUsers;
     private IGestPlace ssPlaces;
 
-    public SAddAndSeekFacade() {
+    public SAddAndSeekFacade() throws SQLException, ClassNotFoundException {
+        this.currentUser = "";
         this.functional = true;
-        /**
-         * PARSER !!!!
-         this.ssUsers = Parser.parseUsers();
-         this.ssPlaces = Parser.parsePlaces();
-         */
+        this.ssUsers = new SSUserFacade();
+        this.ssPlaces = new SSPlacesFacade();
     }
 
     @Override
@@ -61,11 +59,13 @@ public class SAddAndSeekFacade implements IGestAddAndSeek {
         return false;
     }
 
-    public void logout() {
+    public void logout() throws SQLException, ClassNotFoundException {
+        ConnectionDB db = new ConnectionDB();
         this.functional = false;
+        db.saveUsers(ssUsers.getUsers());
+        db.savePlaces(ssPlaces.getPlaces());
     }
-
-
+    
     public void startUp() throws SQLException, ClassNotFoundException {
         ConnectionDB database = new ConnectionDB();
         Map<String, User> allUsers = database.loadUsers();

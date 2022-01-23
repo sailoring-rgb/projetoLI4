@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class SSUserFacade implements IGestUser {
-    ConnectionDB db = new ConnectionDB();
+    private ConnectionDB db = new ConnectionDB();
     private Map<String, User> users;    // chave: userId, objeto: user
 
     public SSUserFacade() throws SQLException, ClassNotFoundException {
