@@ -8,12 +8,7 @@ import java.util.*;
 
 @RestController
 public class SSPlacesFacade implements IGestPlace {
-    ConnectionDB db = new ConnectionDB();
     private Map<String, Place> places;  // chave: placeId, objeto: GuiaTuristicoLN.Place
-
-    public SSPlacesFacade() throws SQLException, ClassNotFoundException {
-        this.places = db.loadPlaces();
-    }
 
     public SSPlacesFacade(Map<String, Place> places) throws SQLException, ClassNotFoundException {
         this.places = new HashMap<>(places);

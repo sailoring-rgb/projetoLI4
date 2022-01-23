@@ -8,19 +8,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class SSUserFacade implements IGestUser {
-    private ConnectionDB db = new ConnectionDB();
     private Map<String, User> users;    // chave: userId, objeto: user
-
-    public SSUserFacade() throws SQLException, ClassNotFoundException {
-        this.users = db.loadUsers();
-    }
-
-    public Map<String,Plan> loadPlansUser(Map<String,Plan> plans, String userId){
-        Map<String,Plan> plansOfUser = new HashMap<>();
-        Plan plan = plans.get(userId);
-        plansOfUser.put(plan.getName(),plan.clone());
-        return plansOfUser;
-    }
 
     public SSUserFacade(Map<String, User> users) throws SQLException, ClassNotFoundException {
         this.users = new HashMap<>(users);
