@@ -3,17 +3,23 @@ package GuiaTuristicoLN;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.sql.SQLException;
 import java.util.*;
 
 @RestController
 public class SSPlacesFacade implements IGestPlace {
+    ConnectionDB db = new ConnectionDB();
     private Map<String, Place> places;  // chave: placeId, objeto: GuiaTuristicoLN.Place
 
-    public SSPlacesFacade(Map<String, Place> places) {
+    public SSPlacesFacade() throws SQLException, ClassNotFoundException {
+        this.places = db.loadPlaces();
+    }
+
+    public SSPlacesFacade(Map<String, Place> places) throws SQLException, ClassNotFoundException {
         this.places = new HashMap<>(places);
     }
 
-    public SSPlacesFacade(SSPlacesFacade facade) {
+    public SSPlacesFacade(SSPlacesFacade facade) throws SQLException, ClassNotFoundException {
         this.places = facade.getPlaces();
     }
 

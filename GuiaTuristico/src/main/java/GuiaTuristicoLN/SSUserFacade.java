@@ -1,5 +1,6 @@
 package GuiaTuristicoLN;
 
+import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
@@ -7,13 +8,18 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class SSUserFacade implements IGestUser {
+    ConnectionDB db = new ConnectionDB();
     private Map<String, User> users;    // chave: userId, objeto: user
 
-    public SSUserFacade(Map<String, User> users) {
+    public SSUserFacade() throws SQLException, ClassNotFoundException {
+        this.users = db.loadUsers();
+    }
+
+    public SSUserFacade(Map<String, User> users) throws SQLException, ClassNotFoundException {
         this.users = new HashMap<>(users);
     }
 
-    public SSUserFacade(SSUserFacade facade) {
+    public SSUserFacade(SSUserFacade facade) throws SQLException, ClassNotFoundException {
         this.users = facade.getUsers();
     }
 
