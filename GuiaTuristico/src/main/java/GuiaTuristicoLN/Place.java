@@ -11,9 +11,9 @@ public class Place implements Reviewable, Comparable {
     private String category;
     private String location;
     private String city;
-    private Map<String,Review> reviews;  // chave: userId, objeto: review
+    private Map<String, Review> reviews;  // chave: userId, objeto: review
 
-    public Place(String name){
+    public Place(String name) {
         this.id = "";
         this.name = name;
         this.category = "";
@@ -22,7 +22,7 @@ public class Place implements Reviewable, Comparable {
         this.reviews = new HashMap<>();
     }
 
-    public Place(String id,String name, String category, String location, String city, Map<String, Review> reviews){
+    public Place(String id, String name, String category, String location, String city, Map<String, Review> reviews) {
         this.id = id;
         this.name = name;
         this.category = category;
@@ -31,7 +31,7 @@ public class Place implements Reviewable, Comparable {
         this.reviews = new HashMap<>(reviews);
     }
 
-    public Place(Place place){
+    public Place(Place place) {
         this.id = place.getId();
         this.name = place.getName();
         this.category = place.getCategory();
@@ -49,52 +49,52 @@ public class Place implements Reviewable, Comparable {
         this.reviews = new HashMap<>();
     }
 
-    public String getId(){
+    public String getId() {
         return this.id;
     }
 
-    public String getName(){
+    public String getName() {
         return this.name;
     }
 
-    public String getCategory(){
+    public String getCategory() {
         return this.category;
     }
 
-    public String getLocation(){
+    public String getLocation() {
         return this.location;
     }
 
-    public String getCity(){
+    public String getCity() {
         return this.city;
     }
 
-    public float calculateClassification(){
+    public float calculateClassification() {
         float total = 0;
         int size = reviews.size();
-        for(Review rev: reviews.values()){
+        for (Review rev : reviews.values()) {
             total += rev.getClassification();
         }
         return total / size;
     }
 
-    public Map<String, Review> getReviews(){
-        return this.reviews.entrySet().stream().collect(Collectors.toMap(e->e.getKey(), e-> e.getValue().clone()));
+    public Map<String, Review> getReviews() {
+        return this.reviews.entrySet().stream().collect(Collectors.toMap(e -> e.getKey(), e -> e.getValue().clone()));
     }
 
-    public Place clone(){
+    public Place clone() {
         return new Place(this);
     }
 
     @Override
     public void add_review(Review r) {
-        this.reviews.put(r.getUserId(),r);
+        this.reviews.put(r.getUserId(), r);
     }
 
     @Override
     public void remove_review(String userId, String placeId) {
-        for (Review r : this.reviews.values()){
-            if(r.getPlaceId().equals(placeId) && r.getUserId().equals(userId)) this.reviews.remove(r.getUserId());
+        for (Review r : this.reviews.values()) {
+            if (r.getPlaceId().equals(placeId) && r.getUserId().equals(userId)) this.reviews.remove(r.getUserId());
         }
     }
 

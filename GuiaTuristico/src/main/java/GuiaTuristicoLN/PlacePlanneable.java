@@ -8,23 +8,23 @@ public class PlacePlanneable extends Place {
     private LocalDateTime start_time;
     private LocalDateTime finish_time;
 
-    public PlacePlanneable(String id, String name, String category, String location, String city, Map<String, Review> reviews, LocalDateTime start_time, LocalDateTime finish_time){
-        super(id,name,category,location,city,reviews);
+    public PlacePlanneable(String id, String name, String category, String location, String city, Map<String, Review> reviews, LocalDateTime start_time, LocalDateTime finish_time) {
+        super(id, name, category, location, city, reviews);
         this.start_time = start_time;
         this.finish_time = finish_time;
     }
 
-    public PlacePlanneable(PlacePlanneable pp){
+    public PlacePlanneable(PlacePlanneable pp) {
         super(pp);
         this.start_time = pp.getStartTime();
         this.finish_time = pp.getFinishTime();
     }
 
-    public LocalDateTime getStartTime(){
+    public LocalDateTime getStartTime() {
         return this.start_time;
     }
 
-    public LocalDateTime getFinishTime(){
+    public LocalDateTime getFinishTime() {
         return this.finish_time;
     }
 
@@ -35,7 +35,7 @@ public class PlacePlanneable extends Place {
 
     @Override
     public boolean equals(Object o) {
-        if(!super.equals(o)) return false;
+        if (!super.equals(o)) return false;
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         PlacePlanneable that = (PlacePlanneable) o;

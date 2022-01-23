@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6da5abc4-d0af-4739-8932-0ce8e9c8161d" name="Changes" comment="" />
+    <list default="true" id="6da5abc4-d0af-4739-8932-0ce8e9c8161d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/projetoLI4.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/projetoLI4.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GuiaTuristico.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GuiaTuristico/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/ConnectionDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/ConnectionDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/IGestAddAndSeek.java" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/IGestAddAndSeek.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/IGestPlace.java" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/IGestPlace.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/IGestUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/IGestUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/Place.java" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/Place.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/PlacePlanneable.java" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/PlacePlanneable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/Plan.java" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/Plan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/Review.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/Reviewable.java" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/Reviewable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/SAddAndSeekFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/SAddAndSeekFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/SSPlacesFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/SSPlacesFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/SSUserFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/SSUserFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/test/java/GuiaTuristico/GuiaTuristicoApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/test/java/GuiaTuristico/GuiaTuristicoApplicationTests.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,7 +39,20 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="jdk.selected.JAVA_MODULE" value="17" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RunManager">
+    <configuration name="GuiaTuristicoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="GuiaTuristico" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="GuiaTuristico.GuiaTuristicoApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -30,6 +63,7 @@
       <option name="presentableId" value="Default" />
       <updated>1642693965307</updated>
       <workItem from="1642693970452" duration="26000" />
+      <workItem from="1642944695940" duration="364000" />
     </task>
     <servers />
   </component>

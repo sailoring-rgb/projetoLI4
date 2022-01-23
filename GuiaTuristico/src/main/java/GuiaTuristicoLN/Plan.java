@@ -14,7 +14,7 @@ public class Plan {
     private String city;
     private List<PlacePlanneable> places;
 
-    public Plan(String userId,String name,LocalDateTime start_time,LocalDateTime finish_time,String day,String city){
+    public Plan(String userId, String name, LocalDateTime start_time, LocalDateTime finish_time, String day, String city) {
         this.userId = userId;
         this.name = name;
         this.start_time = start_time;
@@ -24,7 +24,7 @@ public class Plan {
         this.places = new ArrayList<>();
     }
 
-    public Plan(String userId, String name, LocalDateTime start_time, LocalDateTime finish_time, String day, String city, List<PlacePlanneable> places){
+    public Plan(String userId, String name, LocalDateTime start_time, LocalDateTime finish_time, String day, String city, List<PlacePlanneable> places) {
         this.userId = userId;
         this.name = name;
         this.start_time = start_time;
@@ -34,7 +34,7 @@ public class Plan {
         this.places = new ArrayList<>(places);
     }
 
-    public Plan(Plan plan){
+    public Plan(Plan plan) {
         this.userId = plan.getUserID();
         this.name = plan.getName();
         this.start_time = plan.getStartTime();
@@ -44,7 +44,7 @@ public class Plan {
         this.places = plan.getPlaces();
     }
 
-    public Plan(String name, LocalDateTime start_time, LocalDateTime finish_time, String city,String userId) {
+    public Plan(String name, LocalDateTime start_time, LocalDateTime finish_time, String city, String userId) {
         this.userId = userId;
         this.name = name;
         this.start_time = start_time;
@@ -54,35 +54,37 @@ public class Plan {
         this.places = new ArrayList<>();
     }
 
-    public String getUserID(){
+    public String getUserID() {
         return this.userId;
     }
 
-    public String getName(){
+    public String getName() {
         return this.name;
     }
 
-    public LocalDateTime getStartTime(){
+    public LocalDateTime getStartTime() {
         return this.start_time;
     }
 
-    public LocalDateTime getFinishTime(){
+    public LocalDateTime getFinishTime() {
         return this.finish_time;
     }
 
-    public String getDay(){
+    public String getDay() {
         return this.day;
     }
 
-    public String getCity(){
+    public String getCity() {
         return this.city;
     }
 
-    public List<PlacePlanneable> getPlaces(){
+    public List<PlacePlanneable> getPlaces() {
         return this.places;
     }
 
-    public Plan clone(){ return new Plan(this);}
+    public Plan clone() {
+        return new Plan(this);
+    }
 
     public void setName(String name) {
         this.name = name;
@@ -101,19 +103,19 @@ public class Plan {
         return Objects.hash(userId, name, start_time, finish_time, day, city, places);
     }
 
-    public void addPlaceToPlan(PlacePlanneable p){
+    public void addPlaceToPlan(PlacePlanneable p) {
         if (this.places == null) this.places = new ArrayList<>();
         this.places.add(p);
     }
 
-    public void removePlaceFromPlan(PlacePlanneable p){
+    public void removePlaceFromPlan(PlacePlanneable p) {
         this.places.remove(p);
     }
 
-    public void editaPlaceFromPlano(String placeName, LocalDateTime inicio, LocalDateTime fim){
-        for(PlacePlanneable p : this.places){
-            if (p.getName().equals(placeName)){
-                p.atualizaPlano(inicio,fim);
+    public void editaPlaceFromPlano(String placeName, LocalDateTime inicio, LocalDateTime fim) {
+        for (PlacePlanneable p : this.places) {
+            if (p.getName().equals(placeName)) {
+                p.atualizaPlano(inicio, fim);
                 break;
             }
         }

@@ -1,15 +1,19 @@
 package GuiaTuristicoLN;
 
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 import java.util.*;
 
+@RestController
 public class SSPlacesFacade implements IGestPlace {
-    private Map<String,Place> places;  // chave: placeId, objeto: GuiaTuristicoLN.Place
+    private Map<String, Place> places;  // chave: placeId, objeto: GuiaTuristicoLN.Place
 
-    public SSPlacesFacade(Map<String, Place> places){
+    public SSPlacesFacade(Map<String, Place> places) {
         this.places = new HashMap<>(places);
     }
 
-    public SSPlacesFacade(SSPlacesFacade facade){
+    public SSPlacesFacade(SSPlacesFacade facade) {
         this.places = facade.getPlaces();
     }
 
@@ -17,55 +21,59 @@ public class SSPlacesFacade implements IGestPlace {
         return this.places;
     }
 
-    public Set<Place> placesOfCity(String city){
+    public Set<Place> placesOfCity(String city) {
         Set<Place> placesOfCity = new TreeSet<>();
-        for(Place pl: places.values()){
-            if(pl.getCity().equals(city))
+        for (Place pl : places.values()) {
+            if (pl.getCity().equals(city))
                 placesOfCity.add(pl);
         }
         return placesOfCity;
     }
 
     @Override
-    public Set<Place> filter_by_name(String name){
+    public Set<Place> filter_by_name(String name) {
         Set<Place> placesByName = new TreeSet<>();
-        for(Place pl: places.values()){
-            if(pl.getName().equals(name))
+        for (Place pl : places.values()) {
+            if (pl.getName().equals(name))
                 placesByName.add(pl);
         }
         return placesByName;
     }
 
-    @Override
-    public Set<Place> filter_by_category(String category){
+    @RequestMapping("/")
+    String hey() {
+        return "hey";
+    }
+
+    public Set<Place> filter_by_category(String category) {
         Set<Place> placesByCategory = new TreeSet<>();
-        for(Place pl: places.values()){
-            if(pl.getCategory().equals(category))
+        for (Place pl : places.values()) {
+            if (pl.getCategory().equals(category))
                 placesByCategory.add(pl);
         }
         return placesByCategory;
     }
 
     @Override
-    public Set<Place> filter_by_distance(float distance_max){
+    public Set<Place> filter_by_distance(float distance_max) {
         /**
          * FALTA IMPLEMENTAR A CLASSE LOCATION
-        Set<GuiaTuristicoLN.Place> placesByCategory = new TreeSet<GuiaTuristicoLN.Place>();
-        // distance is valid?
-        for(GuiaTuristicoLN.Place pl: places.values()){
-            if(pl.getLocation().equals(category))
-                placesByCategory.add(pl);
-        }
-        return placesByCategory;
+         Set<GuiaTuristicoLN.Place> placesByCategory = new TreeSet<GuiaTuristicoLN.Place>();
+         // distance is valid?
+         for(GuiaTuristicoLN.Place pl: places.values()){
+         if(pl.getLocation().equals(category))
+         placesByCategory.add(pl);
+         }
+         return placesByCategory;
          */
         return null;
     }
 
     @Override
-    public Set<Place> filter_by_classification(float classification_min){
+    public Set<Place> filter_by_classification(float classification_min) {
         Set<Place> placesByClassification = new TreeSet<>();
-        for(Place pl: places.values()){
-            if(pl.calculateClassification() >= classification_min)
+        for (Place pl : places.values()) {
+            if (pl.calculateClassification() >= classification_min)
                 placesByClassification.add(pl);
         }
         return placesByClassification;
@@ -73,6 +81,6 @@ public class SSPlacesFacade implements IGestPlace {
 
     @Override
     public List<Review> get_reviews_by_place(String placeId) {
-        return (List<Review>)places.get(placeId).getReviews().values();
+        return (List<Review>) places.get(placeId).getReviews().values();
     }
 }
