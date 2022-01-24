@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -88,9 +89,13 @@ public class GuiaTuristicoController {
 
     @PostMapping("/Login")
     public String logInYes(@ModelAttribute(value= "user" ) User user, Model model){
+        Boolean is_log = igestuser.login(user.getId(),user.getPassword());
         model.addAttribute("userYes",user);
-        model.addAttribute("islogged", true);
-        return "loginYes";
+        model.addAttribute("islogged", is_log);
+        if(is_log) {
+            return "loginYes";
+        }
+        else return "loginNo";
     }
 
     @GetMapping("/Perfil/{user_id}")
@@ -131,5 +136,7 @@ public class GuiaTuristicoController {
         model.addAttribute("classification",classification);
         return "rev";
     }
+
+    
 
 }

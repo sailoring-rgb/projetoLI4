@@ -24,4 +24,6 @@ public interface IGestUser {
     boolean delete_review(String userId, String placeId);
 
     Review getReviewUserPlace(String userId, String placeId);
+
+    boolean login(String id, String password);
 }

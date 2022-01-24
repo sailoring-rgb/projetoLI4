@@ -3,6 +3,7 @@ package GuiaTuristicoLN;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.HashMap;
@@ -18,6 +19,18 @@ public class SSUserFacade implements IGestUser {
 
     ConnectionDB db = new ConnectionDB();
 
+    public boolean login(String id, String password) {
+        boolean res = false;
+        log.info(id);
+        log.info(password);
+        if (this.users.containsKey(id)) {
+            User user = this.users.get(id);
+            if (password.equals(user.getPassword())) {
+                res = true;
+            }
+        }
+        return res;
+    }
 
     public SSUserFacade() throws SQLException, ClassNotFoundException {
         this.users = db.loadUsers();
@@ -74,6 +87,7 @@ public class SSUserFacade implements IGestUser {
         return null;
     }
 
+
     @Override
     public boolean create_plan(String userId, String name, LocalDateTime start_time, LocalDateTime finish_time, String day, String city) {
         //falta validar porcarias
@@ -106,7 +120,10 @@ public class SSUserFacade implements IGestUser {
 
     @Override
     public User get_user(String userId) {
-        return this.users.getOrDefault(userId, null);
+        if(this.users.containsKey(userId)){
+            return this.users.get(userId);
+        }
+        return null;
     }
 
     @Override

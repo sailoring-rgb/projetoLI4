@@ -43,7 +43,7 @@ public class SAddAndSeekFacade implements IGestAddAndSeek {
         return false;
     }
 
-    public boolean login(String id, String password) throws IOException {
+    /*public boolean login(String id, String password) throws IOException {
         boolean res = false;
         if (this.ssUsers.getUsers().containsKey(id)) {
             this.currentUser = id;
@@ -53,7 +53,7 @@ public class SAddAndSeekFacade implements IGestAddAndSeek {
             }
         }
         return res;
-    }
+    }*/
 
     public boolean register(String id, String password, String name, String email) {
         if (!this.ssUsers.getUsers().containsKey(id)) {

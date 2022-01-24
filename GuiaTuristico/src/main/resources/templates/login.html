@@ -31,8 +31,8 @@
         <section class="login">
             <h1>LOGIN</h1>
             <form action="#" th:action="@{/Login}" th:object="${user}" method="post">
-                <p>Nome : <label>
-                    <input type="text" th:field="*{name}" />
+                <p>ID : <label>
+                    <input type="text" th:field="*{id}" />
                 </label></p>
                 <p>Password : <label>
                     <input type="text" th:field="*{password}" />

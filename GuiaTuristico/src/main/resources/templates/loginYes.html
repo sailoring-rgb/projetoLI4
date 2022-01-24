@@ -27,7 +27,7 @@
                 <li><i class="fas fa-calendar-alt"></i><a href= "Plans" >
                     <span th:style="${islogged ? 'display:inline' : 'display:block'}"}>Planos </span>
                 </a></li>
-                <li><i th:class="${islogged} ? 'fas fa-user-circle' : 'fas fa-sign-in-alt'"></i><a th:href="'Perfil/' + ${user.name}">
+                <li><i th:class="${islogged} ? 'fas fa-user-circle' : 'fas fa-sign-in-alt'"></i><a th:href="'Perfil/' + ${user.id}">
                     <span th:style="${islogged ? 'display:none' : 'display:inline'}"}>Login </span>
                     <span th:style="${islogged ? 'display:inline' : 'display:none'}"}>Perfil </span>
                 </a></li>

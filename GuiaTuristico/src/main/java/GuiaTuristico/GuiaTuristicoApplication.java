@@ -1,8 +1,5 @@
 package GuiaTuristico;
-import GuiaTuristicoLN.IGestPlace;
-import GuiaTuristicoLN.SSPlacesFacade;
-import GuiaTuristicoLN.SSUserFacade;
-import GuiaTuristicoLN.IGestUser;
+import GuiaTuristicoLN.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
