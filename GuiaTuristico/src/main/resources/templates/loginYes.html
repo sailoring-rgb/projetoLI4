@@ -27,7 +27,7 @@
                 <li><i class="fas fa-calendar-alt"></i><a href= "Plans" >
                     <span th:style="${islogged ? 'display:inline' : 'display:block'}"}>Planos </span>
                 </a></li>
-                <li><i th:class="${islogged} ? 'fas fa-user-circle' : 'fas fa-sign-in-alt'"></i><a th:href="'Perfil/' + ${user.id}">
+                <li><i th:class="${islogged} ? 'fas fa-user-circle' : 'fas fa-sign-in-alt'"></i><a th:href="'Perfil/' + ${userYes.id}">
                     <span th:style="${islogged ? 'display:none' : 'display:inline'}"}>Login </span>
                     <span th:style="${islogged ? 'display:inline' : 'display:none'}"}>Perfil </span>
                 </a></li>
@@ -45,8 +45,8 @@
 </section>
 
 
-<p th:text="'Nome: ' + ${user.name}" />
-<p th:text="'Password: ' + ${user.password}" />
+<p th:text="'Nome: ' + ${userYes.name}" />
+<p th:text="'Password: ' + ${userYes.password}" />
 
 
 
