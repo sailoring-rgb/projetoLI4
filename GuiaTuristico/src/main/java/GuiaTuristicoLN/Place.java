@@ -1,5 +1,9 @@
 package GuiaTuristicoLN;
 
+import GuiaTuristico.GuiaTuristicoController;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -12,6 +16,8 @@ public class Place implements Reviewable, Comparable {
     private String location;
     private String city;
     private Map<String, Review> reviews;  // chave: userId, objeto: review
+
+    private Logger log = LoggerFactory.getLogger(Place.class);
 
     public Place(String name) {
         this.id = "";
@@ -97,10 +103,15 @@ public class Place implements Reviewable, Comparable {
     public float calculateClassification() {
         float total = 0;
         int size = reviews.size();
+        log.info(String.valueOf(size));
         for (Review rev : reviews.values()) {
             total += rev.getClassification();
+            log.info(rev.getUserId());
         }
-        return total / size;
+        if(size>0) {
+            return total / size;
+        }
+        else return 0;
     }
 
     public Map<String, Review> getReviews() {

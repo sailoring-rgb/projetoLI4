@@ -44,24 +44,24 @@
             <div class="wrapper1">
                 <div class="right">
                     <div class="info">
-                        <h3>Universidade do Minho - Campus de Gualtar <!--Nome do local --> </h3>
+                        <h3 th:text="${place.name}">  </h3>
                         <div class="info_data">
                              <div class="data">
-                                <i class="fas fa-map-marker-alt"></i><h4>R. da Universidade, 4710-057 Braga <!--Coordenadas--> </h4></div>
+                                <i class="fas fa-map-marker-alt"></i><h4 th:text="${place.location}"> </h4></div>
                         </div>
                     </div>
                   
                     <div class="projects">
                         <div class="categoria">
-                        <i class="fas fa-tag"></i><p>Universidade <!--Categoria --></p>
+                        <i class="fas fa-tag"></i><p th:text="${place.category}"></p>
                         </div>
                         <div class="classifica">
-                        <i class="far fa-star"></i><p>4,8 (465) <!--Classificação média do local --> </p>
+                        <i class="far fa-star"></i><p th:text="${classification}">  </p>
                         <div class="delete"><i class="fas fa-trash fa-2x"></i></div>
                         </div>
                         </div>
                         <div class="rev">
-                            <div class="text"><i class="far fa-star"></i><p>2 <!--Avaliação do utilizador --></p><p>"Que merda de Universidade" <!--Comentário --></p></div>
+                            <div class="text"><i class="far fa-star"></i><p th:text="${review.classification}"> </p><p th:text="${review.comment}"></p></div>
                            </div>
                     </div>
             </div>

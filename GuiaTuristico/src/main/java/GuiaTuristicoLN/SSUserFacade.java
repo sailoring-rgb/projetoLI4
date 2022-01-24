@@ -12,7 +12,10 @@ import java.util.stream.Collectors;
 
 public class SSUserFacade implements IGestUser {
     private Map<String, User> users;    // chave: userId, objeto: user
+
     private Logger log = LoggerFactory.getLogger(SSUserFacade.class);
+
+
     ConnectionDB db = new ConnectionDB();
 
 
@@ -36,11 +39,11 @@ public class SSUserFacade implements IGestUser {
 
             user.setPlans(plansOfUser);
             user.setReviews(reviewsOfUser);
-        }
+        }/*
         for(User user: this.users.values()){
             for(Plan p: user.getPlans().values()){
             log.info(p.getName());}
-        }
+        }*/
     }
 
     public SSUserFacade(Map<String, User> users) throws SQLException, ClassNotFoundException {
@@ -120,6 +123,14 @@ public class SSUserFacade implements IGestUser {
             this.users.get(userId).getReviews().remove(placeId);
             return true;
         } else return false;
+    }
+
+    @Override
+    public Review getReviewUserPlace(String userId, String placeId){
+        if (this.users.containsKey(userId)){
+            return this.users.get(userId).getReviews().get(placeId).clone();
+        }
+        else return null;
     }
 
 }

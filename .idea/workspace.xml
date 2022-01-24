@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6da5abc4-d0af-4739-8932-0ce8e9c8161d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristico/GuiaTuristicoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristico/GuiaTuristicoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/IGestUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/IGestUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/Place.java" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/Place.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/SSPlacesFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/SSPlacesFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/SSUserFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/SSUserFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/resources/templates/ReviewTable.html" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/resources/templates/ReviewTable.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/resources/templates/rev.html" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/resources/templates/rev.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +71,7 @@
       <workItem from="1642988484985" duration="302000" />
       <workItem from="1643015441485" duration="1217000" />
       <workItem from="1643025017758" duration="2944000" />
+      <workItem from="1643033780870" duration="8548000" />
     </task>
     <servers />
   </component>

@@ -1,5 +1,7 @@
 package GuiaTuristicoLN;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,8 +13,23 @@ public class SSPlacesFacade implements IGestPlace {
     ConnectionDB db = new ConnectionDB();
     private Map<String, Place> places;  // chave: placeId, objeto: GuiaTuristicoLN.Place
 
+    private Logger log = LoggerFactory.getLogger(SSPlacesFacade.class);
+
     public SSPlacesFacade() throws SQLException, ClassNotFoundException {
         this.places  = db.loadPlaces();
+        Map<String,Review> reviews = db.loadReviews();
+        for(Place place: this.places.values()){
+
+            Map<String,Review> reviewsOfPlace = new HashMap<>();  // chave: userId
+
+            for(Review  rev : reviews.values()){
+                if(rev.getPlaceId().equals(place.getId())){
+                    reviewsOfPlace.put(rev.getUserId(),rev);
+                }
+            }
+
+            place.setReviews(reviewsOfPlace);
+        }
     }
 
     public SSPlacesFacade(Map<String, Place> places) throws SQLException, ClassNotFoundException {

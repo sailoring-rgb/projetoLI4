@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class GuiaTuristicoController {
@@ -114,10 +115,18 @@ public class GuiaTuristicoController {
     public String getAllReviews(@PathVariable String user_id, Model model){
         List<Review> reviews = igestuser.get_reviews_by_user(user_id);
         model.addAttribute("reviews",reviews);
-        return "reviews";
+        return "ReviewTable";
     }
 
     @GetMapping("/reviews/{user_id}/{place_id}")
-    public String getUserPlaceReview()
+    public String getUserPlaceReview(@PathVariable String user_id, @PathVariable String place_id, Model model){
+        Review rev = igestuser.getReviewUserPlace(user_id,place_id);
+        Place place = igestplaces.getPlaces().get(place_id);
+        float classification = place.calculateClassification();
+        model.addAttribute("review",rev);
+        model.addAttribute("place",place);
+        model.addAttribute("classification",classification);
+        return "rev";
+    }
 
 }

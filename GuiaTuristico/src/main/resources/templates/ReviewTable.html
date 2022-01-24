@@ -31,4 +31,26 @@
 </section>
 
 
+<table>
+    <thead>
+    <tr>
+        <th> User ID </th>
+        <th> Place ID </th>
+        <th> Classifcação </th>
+        <th> Comentário </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${reviews.empty}">
+        <td colspan="2"> No Review Available </td>
+    </tr>
+    <tr th:each="review : ${reviews}">
+        <td><span th:text="${review.userId}"> UserID </span></td>
+        <td><span th:text="${review.placeId}"> PlaceID </span></td>
+        <td><span th:text="${review.classification}"> Classificação </span></td>
+        <td><span th:text="${review.comment}"> Comentário </span></td>
+    </tr>
+    </tbody>
+</table>
+
 </body>
