@@ -22,4 +22,8 @@ public final class RandomUtils {
         sb.append(latitude).append(" ").append(longitude);
         return sb.toString();
     }
+
+    public static double calculateDistante(double lat1, double long1, double lat2, double long2){
+        return (Math.sqrt(Math.pow(lat1-lat2,2) + Math.pow(long1-long2,2)));
+    }
 }
