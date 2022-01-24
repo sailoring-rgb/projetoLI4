@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
@@ -18,6 +19,22 @@ public class SSUserFacade implements IGestUser {
 
 
     ConnectionDB db = new ConnectionDB();
+
+    public void saveData() throws SQLException, ParseException {
+        Map<String,Review> allRevs = new HashMap<>();
+        Map<String,Plan> allPlans = new HashMap<>();
+        Map.Entry<String,Review> rev;
+        Map.Entry<String,Plan> pla;
+        for(User u : this.users.values()){
+            rev = u.getReviews().entrySet().iterator().next();
+            pla = u.getPlans().entrySet().iterator().next();
+            allRevs.put(u.getId(), rev.getValue().clone());
+            allPlans.put(u.getId(),pla.getValue().clone());
+        }
+        db.saveUsers(users);
+        db.saveReviews(allRevs);
+        db.savePlans(allPlans);
+    }
 
     public boolean login(String id, String password) {
         boolean res = false;
@@ -151,6 +168,14 @@ public class SSUserFacade implements IGestUser {
             return this.users.get(userId).getReviews().get(placeId).clone();
         }
         else return null;
+    }
+
+    @Override
+    public List<Plan> get_plans_by_user(String userId) {
+        if (this.users.containsKey(userId)) {
+            return this.users.get(userId).getPlans().values().stream().map(Plan::clone).collect(Collectors.toList());
+        }
+        return null;
     }
 
 }

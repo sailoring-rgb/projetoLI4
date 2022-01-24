@@ -15,6 +15,11 @@ public class SSPlacesFacade implements IGestPlace {
 
     private Logger log = LoggerFactory.getLogger(SSPlacesFacade.class);
 
+
+    public void savePlaces() throws SQLException {
+        db.savePlaces(places);
+    }
+
     public SSPlacesFacade() throws SQLException, ClassNotFoundException {
         this.places  = db.loadPlaces();
         Map<String,Review> reviews = db.loadReviews();

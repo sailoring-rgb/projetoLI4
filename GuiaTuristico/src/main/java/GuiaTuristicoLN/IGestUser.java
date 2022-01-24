@@ -28,4 +28,6 @@ public interface IGestUser {
     boolean login(String id, String password);
 
     boolean register(String password, String name, String email);
+
+    public List<Plan> get_plans_by_user(String userId);
 }
