@@ -36,8 +36,7 @@ public class GuiaTuristicoApplication extends SpringBootServletInitializer {
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application){
 		return application.sources(GuiaTuristicoApplication.class);
 	}
-
-	//@EnableAutoConfiguration(exclude={ErrorMvcAutoConfiguration.class})
+	
 	public static void main(String[] args) {
 		SpringApplication.run(GuiaTuristicoApplication.class, args);
 	}

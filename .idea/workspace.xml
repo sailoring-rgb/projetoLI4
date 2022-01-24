@@ -5,20 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6da5abc4-d0af-4739-8932-0ce8e9c8161d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/resources/templates/createPlan.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/resources/templates/greeting.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/resources/templates/result.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/resources/templates/savePlan.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristico/GuiaTuristicoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristico/GuiaTuristicoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/ConnectionDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/ConnectionDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/IGestAddAndSeek.java" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/IGestAddAndSeek.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/Place.java" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/Place.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/Plan.java" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/Plan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/SAddAndSeekFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/SAddAndSeekFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/SSPlacesFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/SSPlacesFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/SSUserFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/SSUserFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/resources/templates/SignUpYes.html" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/resources/templates/SignUpYes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/resources/templates/createPlan.html" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/resources/templates/createPlan.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/resources/templates/savePlan.html" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/resources/templates/savePlan.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

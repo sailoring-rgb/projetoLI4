@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-<form action="#" th:action="@{/create_plan}" th:object="${plan}" method="post">
+<form action="#" th:action="@{/save_plan}" th:object="${plan}" method="post">
     <label for="id">UserID:</label>
     <input id="id" type="text" th:field="*{userID}" />
     <br>

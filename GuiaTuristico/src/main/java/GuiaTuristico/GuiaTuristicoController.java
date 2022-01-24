@@ -1,8 +1,6 @@
 package GuiaTuristico;
 
 import GuiaTuristicoLN.*;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,8 +17,6 @@ import java.util.Map;
 @Controller
 public class GuiaTuristicoController {
 
-    private Logger log = LoggerFactory.getLogger(GuiaTuristicoController.class);
-
     @Autowired
     IGestUser igestuser;
 
@@ -34,8 +30,6 @@ public class GuiaTuristicoController {
 
     @GetMapping("/user/{user_id}")
     public String getUserName(Model model, @PathVariable String user_id) {
-        log.info("entrou");
-        log.info(user_id);
         User user = igestuser.get_user(user_id);
         String user_name = user.getName();
         String password = user.getPassword();
@@ -63,7 +57,6 @@ public class GuiaTuristicoController {
         model.addAttribute("islogged", true);
         String size = String.valueOf(igestuser.getUsers().size());
         user.setId(size);
-        log.info(user.getId());
         igestuser.getUsers().put(size, user);
         igestuser.saveUser(user);
         model.addAttribute("userId", user.getId());
@@ -156,15 +149,17 @@ public class GuiaTuristicoController {
 
     @PostMapping("/save_plan")
     public String savePlan(@ModelAttribute(value="plan") Plan plan, Model model) throws SQLException {
+        model.addAttribute("plan_saved", plan);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         LocalDateTime dateTimeS = LocalDateTime.parse(plan.getSTime(), formatter);
         LocalDateTime dateTimeF = LocalDateTime.parse(plan.getFTime(), formatter);
-        model.addAttribute("plan_saved", plan);
+        plan.setFinishTime(dateTimeF);
+        plan.setStartTime(dateTimeS);
         Boolean create_plan = igestuser.create_plan(plan.getUserID(),plan.getName(),dateTimeS,dateTimeF,plan.getDay(),plan.getCity());
         if(create_plan) {
             igestuser.updateOnePlan(plan);
         } else {
-            igestuser.saveOnePlan(plan);
+            igestuser.savePlan(plan);
         }
         return "savePlan";
     }
