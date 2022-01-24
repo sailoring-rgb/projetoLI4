@@ -58,6 +58,7 @@ public class GuiaTuristicoController {
         String size = String.valueOf(igestuser.getUsers().size() + 1);
         user.setId(size);
         igestuser.getUsers().put(size, user);
+        model.addAttribute("userId", user.getId());
         return "SignUpYes";
     }
 
@@ -88,12 +89,14 @@ public class GuiaTuristicoController {
     @PostMapping("/Login")
     public String logInYes(@ModelAttribute(value= "user" ) User user, Model model){
         model.addAttribute("userYes",user);
+        model.addAttribute("islogged", true);
         return "loginYes";
     }
 
-    @GetMapping("/Perfil")
-    public String perfil(@ModelAttribute User user,Model model){
-        model.addAttribute("perfil",user);
+    @GetMapping("/Perfil/{user_id}")
+    public String perfil(@PathVariable String user_id, Model model){
+        User u = igestuser.get_user(user_id);
+        model.addAttribute("perfil",u);
         return "myprofile";
     }
 

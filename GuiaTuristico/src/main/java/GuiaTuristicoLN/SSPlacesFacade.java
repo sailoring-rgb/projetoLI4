@@ -77,6 +77,7 @@ public class SSPlacesFacade implements IGestPlace {
         return placesByCategory;
     }
 
+    @Override
     public Set<Place> filter_by_distance(String locationUser, double distance_max) {
         RandomUtils rand = new RandomUtils();
         Set<GuiaTuristicoLN.Place> placesByLocation = new TreeSet<>();

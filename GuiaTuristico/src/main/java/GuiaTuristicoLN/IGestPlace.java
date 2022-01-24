@@ -14,7 +14,7 @@ public interface IGestPlace {
 
     Set<Place> filter_by_category(String category);
 
-    Set<Place> filter_by_distance(float distance_max);
+    Set<Place> filter_by_distance(String locationUser, double distance_max);
 
     Set<Place> filter_by_classification(float classification_min);
 
