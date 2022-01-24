@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <link rel="stylesheet" th:href="@{/css/styles.css}"/>
+    <link rel="stylesheet" href="../static/css/styles.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+          integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+          crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <title>ask&SEEK</title>
+</head>
+<body>
+<header>
+    <nav>
+        <a href="Home"><img src="../static/img/logo_deitado.png" th:src="@{img/logo_deitado.png}" alt=""></a>
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+                <li><i class="fas fa-home"></i><a class="active" href="Home">Home</a></li>
+                <li><i class="fas fa-sign-in-alt"></i><a href="Login">Login</a></li>
+                <li><i class="fas fa-user-plus"></i><a href="SignUp">Sign-Up</a></li>
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+</header>
+
+<!--- principal ----->
+<section class="principal">
+    <div class="row">
+        <div class="principal-col">
+            <h2>Planning</h2>
+            <div class="calendario">
+                <i class="fa fa-calendar fa-3x"></i>
+            </div>
+            <p><strong>ADD </strong> an itinerary to enjoy alone or with your loved ones.
+                Choose a region for your plan and swiftly add locations to explore.
+            </p>
+        </div>
+        <div class="principal-col">
+            <h2>Profile</h2>
+            <div class="people fa-3x">
+                <i class="fa fa-user"></i>
+            </div>
+            <p> Customize your profile to your liking.
+                Effortlessly change your avatar, e-mail <strong> & </strong> password
+                with a tap of your finger.
+            </p>
+        </div>
+        <div class="principal-col">
+            <h2>Search</h2>
+            <div class="lupa">
+                <i class="fas fa-search fa-3x"></i>
+            </div>
+            <p>
+                <strong>SEEK</strong> the best activity to enjoy from a plethora of locations,
+                reviewed individually by other users so you know exactly what to expect.
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<!---------JavaScript for Toogle Menu---------->
+<script>
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu() {
+        navLinks.style.right = "0";
+    }
+
+    function hideMenu() {
+        navLinks.style.right = "-200px";
+    }
+</script>
+</body>
+</html>

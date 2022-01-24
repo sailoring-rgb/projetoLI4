@@ -82,12 +82,36 @@ public class Plan {
         return this.places;
     }
 
-    public Plan clone() {
-        return new Plan(this);
-    }
-
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setUserId(String userid) {
+        this.userId = userid;
+    }
+
+    public void setStartTime(LocalDateTime start_time) {
+        this.start_time = start_time;
+    }
+
+    public void setFinishTime(LocalDateTime finish_time) {
+        this.finish_time = finish_time;
+    }
+
+    public void setDay(String day) {
+        this.day = day;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public void setPlaces(List<PlacePlanneable> places) {
+        this.places = new ArrayList<>(places);
+    }
+
+    public Plan clone() {
+        return new Plan(this);
     }
 
     @Override

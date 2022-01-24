@@ -58,6 +58,10 @@ public class User implements Reviewable {
         this.favourites = user.getFavourites();
     }
 
+    public User() {
+
+    }
+
     public String getName() {
         return this.name;
     }
@@ -84,14 +88,6 @@ public class User implements Reviewable {
 
     public Map<String, Review> getReviews() {
         return this.reviews.entrySet().stream().collect(Collectors.toMap(e -> e.getKey(), e -> e.getValue().clone()));
-    }
-
-    public void setPlans(Map<String,Plan> plans){
-        this.plans = new HashMap<>(plans);
-    }
-
-    public void setReviews(Map<String,Review> revs){
-        this.reviews = new HashMap<>(revs);
     }
 
     public List<Place> getFavourites() {
@@ -123,6 +119,34 @@ public class User implements Reviewable {
                 this.favourites.remove(p);
             }
         }
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public void setPlans(Map<String, Plan> plans) {
+        this.plans = new HashMap<>(plans);
+    }
+
+    public void setReviews(Map<String, Review> reviews) {
+        this.reviews = new HashMap<>(reviews);
+    }
+
+    public void setFavourites(List<Place> favourites) {
+        this.favourites = favourites;
     }
 
     public void setPassword(String newPassword) {

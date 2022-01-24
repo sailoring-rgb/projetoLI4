@@ -46,6 +46,22 @@ public class Review {
         return this.comment;
     }
 
+    public void setUserId(String userid) {
+        this.userId = userid;
+    }
+
+    public void setPlaceId(String placeId) {
+        this.placeId = placeId;
+    }
+
+    public void setClassification(float classification) {
+        this.classification = classification;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
     public Review clone() {
         return new Review(this);
     }

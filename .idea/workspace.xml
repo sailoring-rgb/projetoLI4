@@ -6,8 +6,50 @@
   <component name="ChangeListManager">
     <list default="true" id="6da5abc4-d0af-4739-8932-0ce8e9c8161d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristico/GuiaTuristicoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristico/GuiaTuristicoApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/ConnectionDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/ConnectionDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/IGestAddAndSeek.java" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/IGestAddAndSeek.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/IGestPlace.java" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/IGestPlace.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/IGestUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/IGestUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/IgnoreThisClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/IgnoreThisClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/Place.java" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/Place.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/PlacePlanneable.java" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/PlacePlanneable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/Plan.java" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/Plan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/Review.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/Reviewable.java" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/Reviewable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/SAddAndSeekFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/SAddAndSeekFacade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/SSPlacesFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/SSPlacesFacade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/SSUserFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/SSUserFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fase2/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/fase2/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fase2/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/fase2/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fase2/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/fase2/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fase2/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/fase2/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fase2/.idea/runConfigurations.xml" beforeDir="false" afterPath="$PROJECT_DIR$/fase2/.idea/runConfigurations.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fase2/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/fase2/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fase2/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/fase2/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fase2/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/fase2/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fase2/fase2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/fase2/fase2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fase2/src/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/fase2/src/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fase2/src/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/fase2/src/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fase2/src/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/fase2/src/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fase2/src/.idea/runConfigurations.xml" beforeDir="false" afterPath="$PROJECT_DIR$/fase2/src/.idea/runConfigurations.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fase2/src/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/fase2/src/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fase2/src/ConnectionDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/fase2/src/ConnectionDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fase2/src/IGestAddAndSeek.java" beforeDir="false" afterPath="$PROJECT_DIR$/fase2/src/IGestAddAndSeek.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fase2/src/IGestPlace.java" beforeDir="false" afterPath="$PROJECT_DIR$/fase2/src/IGestPlace.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fase2/src/IGestUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/fase2/src/IGestUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fase2/src/IgnoreThisClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/fase2/src/IgnoreThisClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fase2/src/Place.java" beforeDir="false" afterPath="$PROJECT_DIR$/fase2/src/Place.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fase2/src/PlacePlanneable.java" beforeDir="false" afterPath="$PROJECT_DIR$/fase2/src/PlacePlanneable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fase2/src/Plan.java" beforeDir="false" afterPath="$PROJECT_DIR$/fase2/src/Plan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fase2/src/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/fase2/src/Review.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fase2/src/Reviewable.java" beforeDir="false" afterPath="$PROJECT_DIR$/fase2/src/Reviewable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fase2/src/SAddAndSeekFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/fase2/src/SAddAndSeekFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fase2/src/SSPlacesFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/fase2/src/SSPlacesFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fase2/src/SSUserFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/fase2/src/SSUserFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fase2/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/fase2/src/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +58,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/PlacePlanneable.java" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="23y6QgHVJF15TYpMUpMeloeXuQV" />
   <component name="ProjectViewState">
@@ -50,11 +95,22 @@
       <option name="presentableId" value="Default" />
       <updated>1642693965307</updated>
       <workItem from="1642693970452" duration="26000" />
-      <workItem from="1642944695940" duration="9361000" />
+      <workItem from="1642944695940" duration="16696000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/SSUserFacade.java</url>
+          <line>113</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <link rel="stylesheet" th:href="@{/css/login.css}"/>
+    <link rel="stylesheet" href="../static/css/login.css">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+          integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+          crossorigin="anonymous"/>
+    <title>ask&SEEK</title>
+</head>
+<body>
+<section class="header">
+    <nav>
+        <a href="Home"><img src="../static/img/logo_deitado.png" th:src="@{img/logo_deitado.png}" alt=""></a>
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+                <li><i class="fas fa-home"></i><a href="Home">Home</a></li>
+                <li><i class="fas fa-sign-in-alt"></i><a class="active" href="Perfil">Perfil</a></li>
+                <li><i class="fas fa-user-plus"></i><a href="SignUp">Sign-Up</a></li>
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+</section>
+
+<h1>Perfil</h1>
+
+<p th:text="'Nome: ' + ${IGestUserDTO.nome}"/>
+<p th:text="'Email: ' + ${IGestUserDTO.password}"/>
+
+
+<h1> A sua localização <h1/>
+    <section>
+        <title></title>
+        <meta charset="utf-8"/>
+        <script type='text/javascript'>
+            function GetMap() {
+                var map = new Microsoft.Maps.Map('#myMap', {
+                    credentials: 'AiuJwX0Bz4xMIdSFEKHqIm1jVm9c7T263Mo9LrQwXviR7RNyGm81OhxmC_Fey8KW'
+                });
+
+                //Request the user's location
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    var loc = new Microsoft.Maps.Location(
+                        position.coords.latitude,
+                        position.coords.longitude);
+
+                    //Add a pushpin at the user's location.
+                    var pin = new Microsoft.Maps.Pushpin(loc);
+                    map.entities.push(pin);
+
+                    //Center the map on the user's location.
+                    map.setView({center: loc, zoom: 15});
+                });
+            }
+        </script>
+        <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap' async
+                defer></script>
+    </section>
+    <div id="myMap"
+         style="  margin-left: auto;margin-right: auto;margin-top: auto;border-radius: 100%; width:600px;height:400px;"></div>
+    <!---------JavaScript for Toogle Menu---------->
+    <script>
+        var navLinks = document.getElementById("navLinks");
+
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+    </script>
+</body>
