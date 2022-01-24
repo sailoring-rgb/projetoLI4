@@ -1,7 +1,5 @@
 package GuiaTuristicoLN;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,8 +10,6 @@ import java.util.*;
 public class SSPlacesFacade implements IGestPlace {
     ConnectionDB db = new ConnectionDB();
     private Map<String, Place> places;  // chave: placeId, objeto: GuiaTuristicoLN.Place
-
-    private Logger log = LoggerFactory.getLogger(SSPlacesFacade.class);
 
 
     public void savePlaces() throws SQLException {

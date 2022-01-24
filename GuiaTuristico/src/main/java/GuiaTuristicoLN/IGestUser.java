@@ -40,4 +40,6 @@ public interface IGestUser {
     boolean register(String password, String name, String email);
 
     public List<Plan> get_plans_by_user(String userId);
+
+    Place get_place(String placeID);
 }

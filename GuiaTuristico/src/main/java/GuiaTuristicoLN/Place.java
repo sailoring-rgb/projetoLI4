@@ -103,10 +103,8 @@ public class Place implements Reviewable, Comparable {
     public float calculateClassification() {
         float total = 0;
         int size = reviews.size();
-        log.info(String.valueOf(size));
         for (Review rev : reviews.values()) {
             total += rev.getClassification();
-            log.info(rev.getUserId());
         }
         if(size>0) {
             return total / size;

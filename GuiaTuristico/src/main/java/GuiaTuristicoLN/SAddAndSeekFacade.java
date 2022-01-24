@@ -17,12 +17,6 @@ public class SAddAndSeekFacade implements IGestAddAndSeek {
         this.functional = true;
     }
 
-    /*
-    public SAddAndSeekFacade(){
-        this.currentUser = "";
-        this.functional = true;
-    }*/
-
     @Override
     public boolean add_favourite(String userId, String placeId) {
         if (this.ssUsers.getUsers().containsKey(userId)) {
@@ -42,28 +36,6 @@ public class SAddAndSeekFacade implements IGestAddAndSeek {
         }
         return false;
     }
-
-    /*public boolean login(String id, String password) throws IOException {
-        boolean res = false;
-        if (this.ssUsers.getUsers().containsKey(id)) {
-            this.currentUser = id;
-            User user = this.ssUsers.getUsers().get(id);
-            if (password.equals(user.getPassword())) {
-                res = true;
-            }
-        }
-        return res;
-    }*/
-
-    /*public boolean register(String id, String password, String name, String email) {
-        if (!this.ssUsers.getUsers().containsKey(id)) {
-            User user = new User(id, password, name, email);
-            this.currentUser = id;
-            this.ssUsers.getUsers().put(this.currentUser, user.clone());
-            return true;
-        }
-        return false;
-    }*/
 
     public void logout(){
         this.functional = false;

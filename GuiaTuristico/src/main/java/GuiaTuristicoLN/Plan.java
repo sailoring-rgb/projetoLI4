@@ -56,6 +56,10 @@ public class Plan {
         this.places = new ArrayList<>();
     }
 
+    public Plan() {
+
+    }
+
     public String getUserID() {
         return this.userId;
     }

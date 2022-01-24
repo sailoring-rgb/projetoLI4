@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Result</h1>
+<p th:text="'PlaceID: ' + ${review_saved.placeId}" />
+<p th:text="'UserID: ' + ${review_saved.userId}" />
+<p th:text="'Comentário: ' + ${review_saved.comment}" />
+<p th:text="'Classificação: ' + ${review_saved.classification}" />
+<a href="/save_review">Submit another message</a>
+</body>
+</html>

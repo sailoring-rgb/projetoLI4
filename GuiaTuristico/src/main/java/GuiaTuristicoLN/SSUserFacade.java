@@ -1,8 +1,5 @@
 package GuiaTuristicoLN;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.IOException;
 import java.sql.SQLException;
 import java.text.ParseException;
@@ -14,9 +11,6 @@ import java.util.stream.Collectors;
 
 public class SSUserFacade implements IGestUser {
     private Map<String, User> users;    // chave: userId, objeto: user
-
-    private Logger log = LoggerFactory.getLogger(SSUserFacade.class);
-
 
     ConnectionDB db = new ConnectionDB();
 
@@ -66,8 +60,6 @@ public class SSUserFacade implements IGestUser {
 
     public boolean login(String id, String password) {
         boolean res = false;
-        log.info(id);
-        log.info(password);
         if (this.users.containsKey(id)) {
             User user = this.users.get(id);
             if (password.equals(user.getPassword())) {
@@ -137,7 +129,6 @@ public class SSUserFacade implements IGestUser {
 
     @Override
     public boolean create_plan(String userId, String name, LocalDateTime start_time, LocalDateTime finish_time, String day, String city) {
-        //falta validar porcarias
         if (this.users.containsKey(userId)) {
             Plan plan = new Plan(userId, name, start_time, finish_time, day, city);
             Map<String, Plan>  plans = this.users.get(userId).getPlans();
@@ -145,6 +136,7 @@ public class SSUserFacade implements IGestUser {
                 remove_plan(userId,p.getName());
             }
             this.users.get(userId).getPlans().put(name, plan);
+            return true;
         }
         return false;
     }
@@ -203,6 +195,25 @@ public class SSUserFacade implements IGestUser {
             return this.users.get(userId).getPlans().values().stream().map(Plan::clone).collect(Collectors.toList());
         }
         return null;
+    }
+
+    @Override
+    public Place get_place(String placeID) {
+        for(User u : this.users.values()){
+            for(Plan pla : u.getPlans().values()){
+                for(Place pl : pla.getPlaces())
+                    if(pl.getName().equals(placeID)) return pl.clone();
+            }
+        }
+        return null;
+    }
+
+    public void updateOnePlan(Plan p) throws SQLException {
+        db.updateOnePlan(p);
+    }
+
+    public void updateOneRevire(Review r) throws SQLException{
+        db.updateOneReview(r);
     }
 
 }

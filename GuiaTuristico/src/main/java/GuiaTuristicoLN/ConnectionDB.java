@@ -163,13 +163,38 @@ public class ConnectionDB {
     }
 
     public void saveOneReview(Review r) throws SQLException{
-        PreparedStatement pStatement  = this.connection.prepareStatement("INSERT INTO reviews(placeName, classification, text, users_id, places_id ) values  (? , ? , " +
-                "? , ? , ?)");
-        pStatement.setString(1, r.getPlaceId());
-        pStatement.setString(2, String.valueOf(r.getClassification()));
-        pStatement.setString(3, r.getComment());
-        pStatement.setString(4, r.getUserId());
-        pStatement.setString(5, r.getPlaceId());
+        PreparedStatement pStatement  = this.connection.prepareStatement("INSERT INTO reviews(classification, text, users_id, places_id ) values  (? , ? , " +
+                "? , ?)");
+        pStatement.setString(1, String.valueOf(r.getClassification()));
+        pStatement.setString(2, r.getComment());
+        pStatement.setString(3, r.getUserId());
+        pStatement.setString(4, r.getPlaceId());
         pStatement.executeUpdate();
-        }
+    }
+
+    public void updateOnePlan(Plan p) throws SQLException {
+        PreparedStatement preparedStatement = this.connection.prepareStatement("UPDATE plans SET name=? , startTime= ? , " +
+                "finishTime=? , city=? , users_id=? WHERE users_id = ?");
+        preparedStatement.setString(1, p.getName());
+        preparedStatement.setTimestamp(2, Timestamp.valueOf(p.getStartTime()));
+        preparedStatement.setTimestamp(3, Timestamp.valueOf(p.getFinishTime()));
+        preparedStatement.setString(4, p.getCity());
+        preparedStatement.setString(5, p.getUserID());
+        preparedStatement.setString(6, p.getUserID());
+        preparedStatement.executeUpdate();
+    }
+
+    public void updateOneReview(Review r) throws SQLException {
+        PreparedStatement preparedStatement = this.connection.prepareStatement("UPDATE reviews SET placeName=? , classification= ? , " +
+                "text=? , users_id=? , places_id =? WHERE users_id = ? && places_id=?");
+        preparedStatement.setString(1, r.getPlaceId());
+        preparedStatement.setString(2, String.valueOf(r.getClassification()));
+        preparedStatement.setString(3, r.getComment());
+        preparedStatement.setString(4, r.getUserId());
+        preparedStatement.setString(5, r.getPlaceId());
+        preparedStatement.setString(6, r.getUserId());
+        preparedStatement.setString(7, r.getPlaceId());
+        preparedStatement.executeUpdate();
+
+    }
 }
