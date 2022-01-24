@@ -55,7 +55,7 @@ public class SAddAndSeekFacade implements IGestAddAndSeek {
         return res;
     }*/
 
-    public boolean register(String id, String password, String name, String email) {
+    /*public boolean register(String id, String password, String name, String email) {
         if (!this.ssUsers.getUsers().containsKey(id)) {
             User user = new User(id, password, name, email);
             this.currentUser = id;
@@ -63,7 +63,7 @@ public class SAddAndSeekFacade implements IGestAddAndSeek {
             return true;
         }
         return false;
-    }
+    }*/
 
     public void logout(){
         this.functional = false;

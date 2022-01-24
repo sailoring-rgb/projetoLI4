@@ -26,4 +26,6 @@ public interface IGestUser {
     Review getReviewUserPlace(String userId, String placeId);
 
     boolean login(String id, String password);
+
+    boolean register(String password, String name, String email);
 }

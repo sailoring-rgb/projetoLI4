@@ -54,6 +54,7 @@ public class GuiaTuristicoController {
 
     @PostMapping("/SignUp")
     public String signUpyes(@ModelAttribute(value="signup") User user, Model model) {
+        Boolean is_sign = igestuser.register(user.getPassword(), user.getName(), user.getEmail());
         model.addAttribute("signupsucess", user);
         model.addAttribute("islogged", true);
         String size = String.valueOf(igestuser.getUsers().size() + 1);
@@ -72,9 +73,6 @@ public class GuiaTuristicoController {
 
     @PostMapping("/save_user")
     public String greetingSubmit(@ModelAttribute(value="user") User user, Model model) {
-        log.info(user.getName());
-        log.info(user.getId());
-        log.info(user.getEmail());
         model.addAttribute("user", user);
         return "result";
     }
@@ -108,13 +106,6 @@ public class GuiaTuristicoController {
     @GetMapping("/places/{city}")
     public String getAllPlaces(@PathVariable String city, Model model){
         List<Place> places = igestplaces.filter_by_city(city);
-        /*log.info(city);
-        for(Place p : places){
-            log.info(p.getName());
-            log.info(p.getCategory());
-            log.info(p.getLocation());
-            log.info(p.getId());
-        }*/
         model.addAttribute("places",places);
         return "plans";
     }
@@ -137,6 +128,6 @@ public class GuiaTuristicoController {
         return "rev";
     }
 
-    
+
 
 }

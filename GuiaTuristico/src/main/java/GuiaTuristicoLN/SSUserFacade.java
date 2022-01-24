@@ -32,6 +32,13 @@ public class SSUserFacade implements IGestUser {
         return res;
     }
 
+    public boolean register(String password, String name, String email) {
+            int id = this.users.values().size()+1;
+            User user = new User(String.valueOf(id), password, name, email);
+            this.users.put(String.valueOf(id), user.clone());
+            return true;
+    }
+
     public SSUserFacade() throws SQLException, ClassNotFoundException {
         this.users = db.loadUsers();
         for(User user: this.users.values()){
@@ -52,11 +59,7 @@ public class SSUserFacade implements IGestUser {
 
             user.setPlans(plansOfUser);
             user.setReviews(reviewsOfUser);
-        }/*
-        for(User user: this.users.values()){
-            for(Plan p: user.getPlans().values()){
-            log.info(p.getName());}
-        }*/
+        }
     }
 
     public SSUserFacade(Map<String, User> users) throws SQLException, ClassNotFoundException {
