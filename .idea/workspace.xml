@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6da5abc4-d0af-4739-8932-0ce8e9c8161d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristico/GuiaTuristicoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristico/GuiaTuristicoApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristico/GuiaTuristicoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristico/GuiaTuristicoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/SSPlacesFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/SSPlacesFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/resources/templates/plans.html" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/resources/templates/plans.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/resources/templates/user_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/resources/templates/user_list.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +32,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -61,7 +66,9 @@
       <updated>1642693965307</updated>
       <workItem from="1642693970452" duration="26000" />
       <workItem from="1642944695940" duration="16953000" />
-      <workItem from="1642988484985" duration="124000" />
+      <workItem from="1642988484985" duration="302000" />
+      <workItem from="1643015441485" duration="1217000" />
+      <workItem from="1643025017758" duration="2091000" />
     </task>
     <servers />
   </component>

@@ -1,4 +1,6 @@
 package GuiaTuristico;
+import GuiaTuristicoLN.IGestPlace;
+import GuiaTuristicoLN.SSPlacesFacade;
 import GuiaTuristicoLN.SSUserFacade;
 import GuiaTuristicoLN.IGestUser;
 import org.springframework.boot.SpringApplication;
@@ -22,9 +24,16 @@ public class GuiaTuristicoApplication extends SpringBootServletInitializer {
 	}
 
 	@Bean
+	public IGestPlace sSPlaceFacadeConfiguration() throws SQLException, ClassNotFoundException {
+		return new SSPlacesFacade();
+	}
+
+	@Bean
 	RestTemplate restTemplate() {
 		return new RestTemplate();
 	}
+
+
 
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application){

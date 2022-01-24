@@ -8,7 +8,12 @@ import java.util.*;
 
 @RestController
 public class SSPlacesFacade implements IGestPlace {
+    ConnectionDB db = new ConnectionDB();
     private Map<String, Place> places;  // chave: placeId, objeto: GuiaTuristicoLN.Place
+
+    public SSPlacesFacade() throws SQLException, ClassNotFoundException {
+        this.places  = db.loadPlaces();
+    }
 
     public SSPlacesFacade(Map<String, Place> places) throws SQLException, ClassNotFoundException {
         this.places = new HashMap<>(places);
@@ -84,7 +89,7 @@ public class SSPlacesFacade implements IGestPlace {
     public List<Place> filter_by_city(String  city) {
         List<Place> placesByCity = new ArrayList<>();
         for (Place pl : places.values()) {
-            if (pl.getCity().equals(city)))
+            if (pl.getCity().equals(city))
             placesByCity.add(pl);
         }
         return placesByCity;

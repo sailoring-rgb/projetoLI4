@@ -83,16 +83,24 @@
 
 
         <table>
-        <tr>
-            <td> Nome <td/>
-
-            <td> Categoria <td/>
-
-        </tr>
+            <thead>
+            <tr>
+                <th> ID </th>
+                <th> Nome </th>
+                <th> Categoria </th>
+                <th> Localização </th>
             </tr>
-            <td> Prompeteu <td/>
-
-            <td> Uni <td/>
-
+            </thead>
+            <tbody>
+            <tr th:if="${places.empty}">
+                <td colspan="2"> No Place Available for this city </td>
+            </tr>
+            <tr th:each="place : ${places}">
+                <td><span th:text="${place.id}"> ID </span></td>
+                <td><span th:text="${place.name}"> Name </span></td>
+                <td><span th:text="${place.category}"> Categoria </span></td>
+                <td><span th:text="${place.location}"> Localização </span></td>
+            </tr>
+            </tbody>
         </table>
 </body>
