@@ -18,5 +18,7 @@ public interface IGestPlace {
 
     Set<Place> filter_by_classification(float classification_min);
 
+    List<Place> filter_by_city(String  city);
+
     List<Review> get_reviews_by_place(String placeId);
 }

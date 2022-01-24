@@ -30,9 +30,9 @@
         </section>
         <section class="login">
             <h1>LOGIN</h1>
-            <form action="#" th:action="@{/Login}" th:object="${IGestUserDTO}" method="post">
+            <form action="#" th:action="@{/Login}" th:object="${user}" method="post">
                 <p>Nome : <label>
-                    <input type="text" th:field="*{nome}" />
+                    <input type="text" th:field="*{name}" />
                 </label></p>
                 <p>Password : <label>
                     <input type="text" th:field="*{password}" />

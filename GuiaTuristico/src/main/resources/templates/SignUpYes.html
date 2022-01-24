@@ -21,8 +21,10 @@
                     <i class="fa fa-times" onclick="hideMenu()"></i>
                     <ul>
                         <li><i class="fas fa-home"></i><a  href="Home" >Home</a></li>
-                        <li th:style="${islogged ? 'display:none' : 'display:block'}"><i class="fas fa-sign-in-alt"></i><a href="Login" >Login</a></li>
-                        <li><i class="fas fa-user-plus"></i><a class="active" href="SignUp">Sign-Up</a></li>
+                        <li><i class="fas fa-sign-in-alt"></i><a href="Login" >Login</a></li>
+                        <li><i class="fas fa-user"></i><a th:href="${islogged ? 'Login' : 'Perfil'}" th:inline = "text"> th:text = "${islogged ? 'Login' : 'Perfil'}"</a></li>
+                        <li> <i class="fas fa-user-plus"> </i><a href="SignUp">Sign-Up</a></li>
+
                     </ul>
                 </div>
                 <i class="fa fa-bars" onclick="showMenu()"></i>

@@ -76,6 +76,10 @@ public class SSUserFacade implements IGestUser {
         //falta validar porcarias
         if (this.users.containsKey(userId)) {
             Plan plan = new Plan(userId, name, start_time, finish_time, day, city);
+            Map<String, Plan>  plans = this.users.get(userId).getPlans();
+            for(Plan p : plans.values()){
+                remove_plan(userId,p.getName());
+            }
             this.users.get(userId).getPlans().put(name, plan);
         }
         return false;

@@ -20,6 +20,11 @@ public class GuiaTuristicoController {
     @Autowired
     IGestUser igestuser;
 
+    @GetMapping("/Home")
+    public String homePg(Model model){
+        return "Pg";
+    }
+
     @GetMapping("/user/{user_id}")
     public String getUserName(Model model, @PathVariable String user_id) {
         log.info("entrou");
@@ -37,7 +42,7 @@ public class GuiaTuristicoController {
     }
 
 
-    @GetMapping("/signup")
+    @GetMapping("/SignUp")
     public String signup(Model model) {
         User user = new User();
         model.addAttribute("signup", user);
@@ -69,4 +74,25 @@ public class GuiaTuristicoController {
         model.addAttribute("user", user);
         return "result";
     }
+
+    @GetMapping("/Login")
+    public String logIn(Model model){
+        User user = new User();
+        model.addAttribute("user", user);
+        return "login";
+    }
+
+
+    @PostMapping("/Login")
+    public String logInYes(@ModelAttribute(value= "user" ) User user, Model model){
+        model.addAttribute("userYes",user);
+        return "loginYes";
+    }
+
+    @GetMapping("/Perfil")
+    public String perfil(@ModelAttribute User user,Model model){
+        model.addAttribute("perfil",user);
+        return "Perfil";
+    }
+
 }

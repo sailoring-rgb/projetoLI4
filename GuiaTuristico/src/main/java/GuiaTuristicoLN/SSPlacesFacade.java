@@ -81,6 +81,16 @@ public class SSPlacesFacade implements IGestPlace {
     }
 
     @Override
+    public List<Place> filter_by_city(String  city) {
+        List<Place> placesByCity = new ArrayList<>();
+        for (Place pl : places.values()) {
+            if (pl.getCity().equals(city)))
+            placesByCity.add(pl);
+        }
+        return placesByCity;
+    }
+
+    @Override
     public List<Review> get_reviews_by_place(String placeId) {
         return (List<Review>) places.get(placeId).getReviews().values();
     }
