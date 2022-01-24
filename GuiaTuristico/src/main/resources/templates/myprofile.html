@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <link rel="stylesheet" th:href="@{/css/myprofile.css}" />
+    <link rel="stylesheet" href="../static/css/myprofile.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <title>My Profile</title>
+</head>
+    <body>
+        <section class="header">
+            <nav>
+                <a href="Pg.html"><img src="../static/img/logo_deitado.png" th:src="@{img/logo_deitado.png}" alt=""></a>
+                <div class="nav-links" id="navLinks">
+                    <i class="fa fa-times" onclick="hideMenu()"></i>
+                    <ul>
+                        <li><i class="fas fa-home"></i><a href= "Pg.html" > Home</a></li>
+                        <li><i class="fas fa-search"></i><a href= "search.html" > Search</a></li>
+                        <li><i class="fas fa-calendar-alt"></i><a href= "plans.html" >Plans</a></li>
+                        <li><i class="fas fa-user-circle"></i><a class= "active" href="myprofile.html">Profile</a></li>
+                        <li><i class="fas fa-sign-out-alt"></i><a href="Pg.html">Sign-Out</a></li>
+                    </ul>
+                </div>
+                <i class="fa fa-bars" onclick="showMenu()"></i>
+            </nav>
+        </section>
+
+        <div class="wrapper">
+                <div class="left">
+                    <img src="profilepic.png" alt="user" width="200">
+                     <h4>Pikachu</h4>
+                     <p>Pokémon</p>
+                <div class="pass"> Change Password </div>
+                </div>
+                <div class="right">
+                    <div class="info">
+                        <h3>Information</h3>
+                        <div class="info_data">
+                             <div class="data">
+                                <h4>Email</h4>
+                                <p>pikachu@gmail.com</p>
+                             </div>
+                             <div class="data">
+                               <h4>ID</h4>
+                                <p>25</p>
+                          </div>
+                        </div>
+                        <div class="email"> Change Email </div>
+                    </div>
+                  
+                  <div class="projects">
+                        <h3>Area Pessoal</h3>
+                        <div class="projects_data">
+                             <div class="fav">
+                                <h4> Favorite <br> <strong>Locations</strong></h4>
+                             </div>
+                             <div class="rev">
+                               <h4>My <br> Reviews</h4>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <section>
+            <title></title>
+            <meta charset="utf-8" />
+            <script type='text/javascript'>
+                function GetMap() {
+                    var map = new Microsoft.Maps.Map('#myMap', {
+                        credentials: 'AiuJwX0Bz4xMIdSFEKHqIm1jVm9c7T263Mo9LrQwXviR7RNyGm81OhxmC_Fey8KW'
+                    });
+
+                    //Request the user's location
+                    navigator.geolocation.getCurrentPosition(function (position) {
+                        var loc = new Microsoft.Maps.Location(
+                            position.coords.latitude,
+                            position.coords.longitude);
+
+                        //Add a pushpin at the user's location.
+                        var pin = new Microsoft.Maps.Pushpin(loc);
+                        map.entities.push(pin);
+
+                        //Center the map on the user's location.
+                        map.setView({ center: loc, zoom: 15 });
+                    });
+                }
+            </script>
+            <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap' async defer></script>
+        </section>
+        <div id="myMap" style="  margin-left: 1000px;margin-top: 140px;border-radius: 100%; width:600px;height:400px;"></div>
+        <!---------JavaScript for Toogle Menu---------->
+        <script>
+            var navLinks = document.getElementById("navLinks");
+            function showMenu(){
+                navLinks.style.right = "0";
+            }
+
+            function hideMenu(){
+                navLinks.style.right = "-200px";
+            }
+        </script>
+    </script>
+</body>

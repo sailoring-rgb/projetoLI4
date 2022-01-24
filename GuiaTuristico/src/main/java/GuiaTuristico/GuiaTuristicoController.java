@@ -93,7 +93,7 @@ public class GuiaTuristicoController {
     @GetMapping("/Perfil")
     public String perfil(@ModelAttribute User user,Model model){
         model.addAttribute("perfil",user);
-        return "Perfil";
+        return "myprofile";
     }
 
     @GetMapping("/places/{city}")
@@ -113,15 +113,11 @@ public class GuiaTuristicoController {
     @GetMapping("/reviews/{user_id}")
     public String getAllReviews(@PathVariable String user_id, Model model){
         List<Review> reviews = igestuser.get_reviews_by_user(user_id);
-        /*log.info(city);
-        for(Place p : places){
-            log.info(p.getName());
-            log.info(p.getCategory());
-            log.info(p.getLocation());
-            log.info(p.getId());
-        }*/
         model.addAttribute("reviews",reviews);
         return "reviews";
     }
+
+    @GetMapping("/reviews/{user_id}/{place_id}")
+    public String getUserPlaceReview()
 
 }
