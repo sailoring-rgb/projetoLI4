@@ -77,19 +77,22 @@ public class SSPlacesFacade implements IGestPlace {
         return placesByCategory;
     }
 
-    @Override
-    public Set<Place> filter_by_distance(float distance_max) {
-        /**
-         * FALTA IMPLEMENTAR A CLASSE LOCATION
-         Set<GuiaTuristicoLN.Place> placesByCategory = new TreeSet<GuiaTuristicoLN.Place>();
-         // distance is valid?
-         for(GuiaTuristicoLN.Place pl: places.values()){
-         if(pl.getLocation().equals(category))
-         placesByCategory.add(pl);
-         }
-         return placesByCategory;
-         */
-        return null;
+    public Set<Place> filter_by_distance(String locationUser, double distance_max) {
+        RandomUtils rand = new RandomUtils();
+        Set<GuiaTuristicoLN.Place> placesByLocation = new TreeSet<>();
+
+        double latitudeUser = rand.parseLatitude(locationUser);
+        double longitudeUser = rand.parseLongitude(locationUser);
+
+        for(Place pl: places.values()) {
+            String locationPlace = pl.getLocation();
+            double latitudePlace = rand.parseLatitude(locationPlace);
+            double longitudePlace = rand.parseLongitude(locationPlace);
+            double distance = rand.calculateDistante(latitudeUser,longitudeUser,latitudePlace,longitudePlace);
+            if(distance < distance_max)
+                placesByLocation.add(pl);
+        }
+        return placesByLocation;
     }
 
     @Override
