@@ -62,7 +62,7 @@ public class SSPlacesFacade implements IGestPlace {
     public Set<Place> filter_by_name(String name) {
         Set<Place> placesByName = new TreeSet<>();
         for (Place pl : places.values()) {
-            if (pl.getName().equals(name))
+            if (pl.getName().contains(name))
                 placesByName.add(pl);
         }
         return placesByName;
@@ -84,17 +84,16 @@ public class SSPlacesFacade implements IGestPlace {
 
     @Override
     public Set<Place> filter_by_distance(String locationUser, double distance_max) {
-        RandomUtils rand = new RandomUtils();
         Set<GuiaTuristicoLN.Place> placesByLocation = new TreeSet<>();
 
-        double latitudeUser = rand.parseLatitude(locationUser);
-        double longitudeUser = rand.parseLongitude(locationUser);
+        double latitudeUser = RandomUtils.parseLatitude(locationUser);
+        double longitudeUser = RandomUtils.parseLongitude(locationUser);
 
         for(Place pl: places.values()) {
             String locationPlace = pl.getLocation();
-            double latitudePlace = rand.parseLatitude(locationPlace);
-            double longitudePlace = rand.parseLongitude(locationPlace);
-            double distance = rand.calculateDistante(latitudeUser,longitudeUser,latitudePlace,longitudePlace);
+            double latitudePlace = RandomUtils.parseLatitude(locationPlace);
+            double longitudePlace = RandomUtils.parseLongitude(locationPlace);
+            double distance = RandomUtils.calculateDistante(latitudeUser,longitudeUser,latitudePlace,longitudePlace);
             if(distance < distance_max)
                 placesByLocation.add(pl);
         }
