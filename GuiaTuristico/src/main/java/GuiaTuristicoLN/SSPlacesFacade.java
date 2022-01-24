@@ -121,9 +121,9 @@ public class SSPlacesFacade implements IGestPlace {
         return (List<Review>) places.get(placeId).getReviews().values();
     }
 
-    public Place getOnePlace(String name){
+    public Place getOnePlace(String id){
         for(Place p : this.places.values()){
-            if(p.getName().equals(name)) return p.clone();
+            if(p.getId().equals(id)) return p.clone();
         }
         return null;
     }
