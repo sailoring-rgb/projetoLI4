@@ -83,17 +83,16 @@ public class ConnectionDB {
             preparedStatement.setInt(6, Integer.parseInt(u.getId()));
             preparedStatement.executeUpdate();
         }
-
+    }
+    public void saveOneUser(User u) throws SQLException {
         PreparedStatement pStatement = this.connection.prepareStatement("INSERT into users(name, password, email, location, id) values (? , ? , " +
                 "? , ? , ?)");
-        for (User u : allUsers.values()) {
-            pStatement.setString(1, u.getName());
-            pStatement.setString(2, u.getPassword());
-            pStatement.setString(3, u.getEmail());
-            pStatement.setString(4, u.getLocation());
-            pStatement.setInt(5, Integer.parseInt(u.getId()));
-            pStatement.executeUpdate();
-        }
+        pStatement.setString(1, u.getName());
+        pStatement.setString(2, u.getPassword());
+        pStatement.setString(3, u.getEmail());
+        pStatement.setString(4, u.getLocation());
+        pStatement.setInt(5, Integer.parseInt(u.getId()));
+        pStatement.executeUpdate();
     }
 
     public void savePlaces(Map<String, Place> allPlaces) throws SQLException {
@@ -109,18 +108,18 @@ public class ConnectionDB {
             preparedStatement.setInt(7, Integer.parseInt(p.getId()));
             preparedStatement.executeUpdate();
         }
+    }
 
-        /*PreparedStatement pStatement = this.connection.prepareStatement("INSERT into places(name, placeId, category, location, city, id) values (? , ? , " +
+    public void saveOnePlace(Place p) throws SQLException{
+        PreparedStatement pStatement = this.connection.prepareStatement("INSERT into places(name, placeId, category, location, city, id) values (? , ? , " +
                 "? , ? , ? , ?)");
-        for (Place p : allPlaces.values()) {
-            pStatement.setString(1, p.getName());
-            pStatement.setString(2, p.getId());
-            pStatement.setString(3, p.getCategory());
-            pStatement.setString(4, p.getLocation());
-            pStatement.setString(5, p.getCity());
-            pStatement.setInt(6, Integer.parseInt(p.getId()));
-            pStatement.executeUpdate();
-        }*/
+        pStatement.setString(1, p.getName());
+        pStatement.setString(2, p.getId());
+        pStatement.setString(3, p.getCategory());
+        pStatement.setString(4, p.getLocation());
+        pStatement.setString(5, p.getCity());
+        pStatement.setInt(6, Integer.parseInt(p.getId()));
+        pStatement.executeUpdate();
     }
 
     public void savePlans(Map<String, Plan> allPlans) throws SQLException, ParseException {
@@ -135,17 +134,17 @@ public class ConnectionDB {
             preparedStatement.setString(6, p.getUserID());
             preparedStatement.executeUpdate();
         }
+    }
 
-        /*PreparedStatement pStatement = this.connection.prepareStatement("INSERT into plans(name, startTime, finishTime, city, users_id) values (? ,  ? , " +
+    public void saveOnePlan(Plan p) throws SQLException {
+        PreparedStatement pStatement = this.connection.prepareStatement("INSERT into plans(name, startTime, finishTime, city, users_id) values (? ,  ? , " +
                 "? , ? , ? )");
-        for (Plan p : allPlans.values()) {
-            pStatement.setString(1, p.getName());
-            pStatement.setTimestamp(2, Timestamp.valueOf(p.getStartTime()));
-            pStatement.setTimestamp(3, Timestamp.valueOf(p.getFinishTime()));
-            pStatement.setString(4, p.getCity());
-            pStatement.setString(5, p.getUserID());
-            pStatement.executeUpdate();
-        }*/
+        pStatement.setString(1, p.getName());
+        pStatement.setTimestamp(2, Timestamp.valueOf(p.getStartTime()));
+        pStatement.setTimestamp(3, Timestamp.valueOf(p.getFinishTime()));
+        pStatement.setString(4, p.getCity());
+        pStatement.setString(5, p.getUserID());
+        pStatement.executeUpdate();
     }
 
     public void saveReviews(Map<String, Review> allReviews) throws SQLException {
@@ -161,16 +160,17 @@ public class ConnectionDB {
             preparedStatement.setString(7, r.getPlaceId());
             preparedStatement.executeUpdate();
         }
+    }
 
-        /*PreparedStatement pStatement  = this.connection.prepareStatement("INSERT INTO reviews(placeName, classification, text, users_id, places_id ) values  (? , ? , " +
+    public void saveOneReview(Review r) throws SQLException{
+        PreparedStatement pStatement  = this.connection.prepareStatement("INSERT INTO reviews(placeName, classification, text, users_id, places_id ) values  (? , ? , " +
                 "? , ? , ?)");
-        for (Review r : allReviews.values()) {
-            pStatement.setString(1, r.getPlaceId());
-            pStatement.setString(2, String.valueOf(r.getClassification()));
-            pStatement.setString(3, r.getComment());
-            pStatement.setString(4, r.getUserId());
-            pStatement.setString(5, r.getPlaceId());
-            pStatement.executeUpdate();
-        }*/
+        pStatement.setString(1, r.getPlaceId());
+        pStatement.setString(2, String.valueOf(r.getClassification()));
+        pStatement.setString(3, r.getComment());
+        pStatement.setString(4, r.getUserId());
+        pStatement.setString(5, r.getPlaceId());
+        pStatement.executeUpdate();
+        }
     }
 }
