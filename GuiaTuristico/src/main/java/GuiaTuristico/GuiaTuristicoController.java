@@ -119,6 +119,13 @@ public class GuiaTuristicoController {
         return "ReviewTable";
     }
 
+    @GetMapping("/Place/{place_id}")
+    public String place(@PathVariable String place_id, Model model){
+        Place p = igestplaces.getOnePlace(place_id);
+        model.addAttribute("place",p);
+        return "local";
+    }
+
     @GetMapping("/reviews/{user_id}/{place_id}")
     public String getUserPlaceReview(@PathVariable String user_id, @PathVariable String place_id, Model model){
         Review rev = igestuser.getReviewUserPlace(user_id,place_id);

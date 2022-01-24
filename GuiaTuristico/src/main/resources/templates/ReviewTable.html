@@ -21,9 +21,9 @@
         <div class="nav-links" id="navLinks">
             <i class="fa fa-times" onclick="hideMenu()"></i>
             <ul>
-                <li><i class="fas fa-home"></i><a href="Home">Home</a></li>
-                <li><i class="fas fa-sign-in-alt"></i><a class="active" href="Perfil">Perfil</a></li>
-                <li><i class="fas fa-user-plus"></i><a href="SignUp">Sign-Up</a></li>
+                <li><i class="fas fa-home"></i><a href="../Home">Home</a></li>
+                <li><i class="fas fa-sign-in-alt"></i><a href="../Login">Login</a></li>
+                <li><i class="fas fa-user-plus"></i><a href="../SignUp">Sign-Up</a></li>
             </ul>
         </div>
         <i class="fa fa-bars" onclick="showMenu()"></i>
@@ -36,6 +36,7 @@
         <th> Place ID </th>
         <th> Classifcação </th>
         <th> Comentário </th>
+        <th> Link </th>
     </tr>
     </thead>
     <tbody>
@@ -43,10 +44,11 @@
         <td colspan="2"> No Review Available </td>
     </tr>
     <tr th:each="review : ${reviews}">
-        <td><span th:text="${review.userId}"> UserID </span></td>
-        <td><span th:text="${review.placeId}"> PlaceID </span></td>
-        <td><span th:text="${review.classification}"> Classificação </span></td>
-        <td><span th:text="${review.comment}"> Comentário </span></td>
+        <td><span th:text="${review.userId}"> </span></td>
+        <td><span th:text="${review.placeId}"></span></td>
+        <td><span th:text="${review.classification}"></span></td>
+        <td><span th:text="${review.comment}"></span></td>
+        <td><a  th:href="'../review/' + ${review.userId} + '/' +  ${review.placeId}"> Review </a></td>
     </tr>
     </tbody>
 </table>

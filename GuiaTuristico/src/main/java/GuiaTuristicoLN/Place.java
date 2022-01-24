@@ -100,6 +100,8 @@ public class Place implements Reviewable, Comparable {
     }
 
 
+
+
     public float calculateClassification() {
         float total = 0;
         int size = reviews.size();
