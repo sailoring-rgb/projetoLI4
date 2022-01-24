@@ -9,7 +9,13 @@ import java.util.Map;
 public interface IGestUser {
     Map<String, User> getUsers();
 
-    public void saveData() throws SQLException, ParseException;
+    void saveUser(User u) throws SQLException;
+
+    void savePlan(Plan p) throws SQLException;
+
+    void savePlace(Place p) throws SQLException;
+
+    void saveReview(Review r) throws SQLException;
 
     boolean create_review(String userId, String placeName, float classification, String comment);
 
@@ -34,6 +40,4 @@ public interface IGestUser {
     boolean register(String password, String name, String email);
 
     public List<Plan> get_plans_by_user(String userId);
-
-    public void saveUser(User u) throws SQLException;
 }
