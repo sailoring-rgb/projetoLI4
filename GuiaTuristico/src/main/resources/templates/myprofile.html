@@ -21,20 +21,28 @@
                 <div class="nav-links" id="navLinks">
                     <i class="fa fa-times" onclick="hideMenu()"></i>
                     <ul>
-                        <li><i class="fas fa-home"></i><a href= "Pg.html" > Home</a></li>
-                        <li><i class="fas fa-search"></i><a href= "search.html" > Search</a></li>
-                        <li><i class="fas fa-calendar-alt"></i><a href= "plans.html" >Plans</a></li>
-                        <li><i class="fas fa-user-circle"></i><a class= "active" href="myprofile.html">Profile</a></li>
-                        <li><i class="fas fa-sign-out-alt"></i><a href="Pg.html">Sign-Out</a></li>
+                        <li><i class="fas fa-home"></i><a href="Home">Home</a></li>
+                        <li><i class="fas fa-search"></i><a href= "Search" >
+                            <span style= "display:inline">Search </span>
+                        </a></li>
+                        <li><i class="fas fa-calendar-alt"></i><a href= "Plans" >
+                            <span style= "display:inline">Planos </span>
+                        </a></li>
+                        <li><i class="fas fa-user-circle" ></i><a href= "Perfil" >
+                            <span style= "display:inline" >Perfil </span>
+                        </a></li>
+                        <li><i class="fas fa-user-minus" ></i><a href= "SignOut" >
+                            <span style= "display:inline" >SignOut </span>
+                        </a></li>
                     </ul>
                 </div>
                 <i class="fa fa-bars" onclick="showMenu()"></i>
             </nav>
         </section>
-
+        <p th:text= " 'Nome :' + ${perfil.name} "/>
         <div class="wrapper">
                 <div class="left">
-                     <p th:text= "${perfil.name}" />
+                     <h1 th:text= "${perfil.name}"> </h1>
                      <p>Pokémon</p>
                 <div class="pass"> Change Password </div>
                 </div>
@@ -44,7 +52,7 @@
                         <div class="info_data">
                              <div class="data">
                                 <h4>Email</h4>
-                                <p>pikachu@gmail.com</p>
+                                <p th:text= "${perfil.email}"/>
                              </div>
                              <div class="data">
                                <h4>ID</h4>

@@ -1,106 +1,82 @@
 <!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
 <head>
+    <a href="Pg.html"><img src="../static/img/logo_deitado.png" th:src="@{img/logo_deitado.png}" alt=""></a>
     <link rel="stylesheet" href="../static/css/plans.css">
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
     <title>plans</title>
 </head>
-    <body>
-        <section class="header">
-            <nav>
-                <a href="Pg.html"><img src="logo.png"></a>
-                <div class="nav-links" id="navLinks">
-                    <i class="fa fa-times" onclick="hideMenu()"></i>
-                    <ul>
-                        <li><i class="fas fa-home"></i><a href= "Pg.html" > Home</a></li>
-                        <li><i class="fas fa-search"></i><a href= "search.html" > Search</a></li>
-                        <li><i class="fas fa-calendar-alt"></i><a class= "active" href= "plans.css" > Plans</a></li>
-                        <li><i class="fas fa-user-circle"></i><a href="myprofile.html">Profile</a></li>
-                        <li><i class="fas fa-sign-out-alt"></i><a href="Pg.html">Sign-Out</a></li>
-                    </ul>
-                </div>
-                <i class="fa fa-bars" onclick="showMenu()"></i>
-            </nav>
-        </section>
-
-        <div class="title">
-            <h1>My Plans</h1>
+<body>
+<section class="header">
+    <nav>
+        <a href="Pg.html"><img src="logo.png"></a>
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+                <li><i class="fas fa-home"></i><a href= "Pg.html" > Home</a></li>
+                <li><i class="fas fa-search"></i><a href= "search.html" > Search</a></li>
+                <li><i class="fas fa-calendar-alt"></i><a class= "active" href= "plans.css" > Plans</a></li>
+                <li><i class="fas fa-user-circle"></i><a href="myprofile.html">Profile</a></li>
+                <li><i class="fas fa-sign-out-alt"></i><a href="Pg.html">Sign-Out</a></li>
+            </ul>
         </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+</section>
 
-        <div class="wrapper">
-            <div class="right">
-                    <div class="delete"><i class="fas fa-trash fa-2x"></i></div>
-                    <div class="rev">
-                        <div class="text"><i class="fas fa-calendar-check fa-3x"></i><li> "Atirar-me da ponte"</li>
-                            <li>-</li>
-                            <li>Segunda-Feira</li>
-                            <li>12:00 - 23:00 </li>
-                        </div>
+<div class="title">
+    <h1>My Plans</h1>
+</div>
+
+<section>
+    <div class="wrapper">
+        <div class="right">
+            <div class="delete"><i class="fas fa-trash fa-2x"></i></div>
+            <div class="rev">
+                <div class="text"><i class="fas fa-calendar-check fa-3x"></i>
+                    <div class="Ativ">
+                        <li> "Atirar-me da ponte"</li>
                     </div>
+                    <div class="traco">
+                        <li>-</li>
+                    </div>
+                    <div class = "week">
+                        <li><strong>Segunda - Feira</strong></li>
+                    </div>
+                    <div class = "horario">
+                        <li>12:00 - 23:00 </li></div>
                 </div>
             </div>
-
-            <div class="wrapper1">
-                <div class="right">
-                    <div class="info">
-                        <h3>Universidade do Minho - Campus de Gualtar</h3>
-                        <div class="info_data">
-                             <div class="data">
-                                <i class="fas fa-map-marker-alt"></i><h4>R. da Universidade, 4710-057 Braga</h4></div>
-                        </div>
-                    </div>
-                  
-                    <div class="projects">
-                        <div class="categoria">
-                        <i class="fas fa-tag"></i><p>Universidade</p>
-                        </div>
-                        <div class="classifica">
-                        <i class="far fa-star"></i><p>4,8 (465)</p>
-                        <div class="delete"><i class="fas fa-trash fa-2x"></i></div>
-                        </div>
-                        </div>
-                        <div class="rev">
-                            <div class="text"><i class="far fa-star"></i><p>2</p><p>"Que merda de Universidade"</p></div>
-                           </div>
-                    </div>
-<!-------------------------------------------------------------
-                    <div class="row">
-                        <div class="principal-col">
-                            <div class="add">
-                                <i class="fas fa-plus fa-3x"></i>
-                            </div>
-                            <p><strong>ADD</strong> Favorite</p>
-                        </div>
-                    --->
-            </div>
+        </div>
+    </div>
+    <div class="arrows">
+        <div class="left">
+            <i class="fas fa-arrow-circle-left fa-2x"></i>
+        </div>
+        <div class="right">
+            <i class="fas fa-arrow-circle-right fa-2x"></i>
+        </div>
     </div>
 
+    </div>
+</section>
 
-        <table>
-            <thead>
-            <tr>
-                <th> ID </th>
-                <th> Nome </th>
-                <th> Categoria </th>
-                <th> Localização </th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:if="${places.empty}">
-                <td colspan="2"> No Place Available for this city </td>
-            </tr>
-            <tr th:each="place : ${places}">
-                <td><span th:text="${place.id}"> ID </span></td>
-                <td><span th:text="${place.name}"> Name </span></td>
-                <td><span th:text="${place.category}"> Categoria </span></td>
-                <td><span th:text="${place.location}"> Localização </span></td>
-            </tr>
-            </tbody>
-        </table>
+<div class="wrapper1">
+    <div class="right">
+        <div class="info">
+            <div class="rev">
+                <div class="text">
+                    <i class="fas fa-plus fa-3x"></i><li><strong>ADD</strong> PLAN </li>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
