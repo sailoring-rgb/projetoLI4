@@ -14,10 +14,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
     <title>My Profile</title>
 </head>
-    <body>
+<body>
         <section class="header">
             <nav>
-                <a href="Pg.html"><img src="../static/img/logo_deitado.png" th:src="@{img/logo_deitado.png}" alt=""></a>
+                <a href="Home"><img src="../static/img/logo_deitado.png" th:src="@{img/logo_deitado.png}" alt=""></a>
                 <div class="nav-links" id="navLinks">
                     <i class="fa fa-times" onclick="hideMenu()"></i>
                     <ul>
@@ -31,7 +31,7 @@
                         <li><i class="fas fa-user-circle" ></i><a href= "Perfil" >
                             <span style= "display:inline" >Perfil </span>
                         </a></li>
-                        <li><i class="fas fa-user-minus" ></i><a href= "SignOut" >
+                        <li><i class="fas fa-user-minus" ></i><a href= "../Home" >
                             <span style= "display:inline" >SignOut </span>
                         </a></li>
                     </ul>
@@ -39,13 +39,12 @@
                 <i class="fa fa-bars" onclick="showMenu()"></i>
             </nav>
         </section>
-        <p th:text= " 'Nome :' + ${perfil.name} "/>
+        <div class="title">
+            <h1>My Profile</h1>
+        </div>
         <div class="wrapper">
                 <div class="left">
                      <h1 th:text= "${perfil.name}"> </h1>
-                     <p>Pokémon</p>
-                <div class="pass"> Change Password </div>
-                </div>
                 <div class="right">
                     <div class="info">
                         <h3>Information</h3>
@@ -59,25 +58,19 @@
                                 <p th:text= "${perfil.id}"></p>
                           </div>
                         </div>
-                        <div class="email"> Change Email </div>
                     </div>
                   
                   <div class="projects">
                         <h3>Area Pessoal</h3>
                         <div class="projects_data">
-                             <div class="fav">
-                                <h4> Favorite <br> <strong>Locations</strong></h4>
-                             </div>
-                             <div class="rev">
-                               <h4>My <br> Reviews</h4>
+                             <div class="rev" >
+                               <h4><a style = "text-decoration: none" th:href="'reviews/' + ${perfil.id}" > My <br> Reviews </a></h4>
                           </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-
         <section>
             <title></title>
             <meta charset="utf-8" />
@@ -105,6 +98,7 @@
             <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap' async defer></script>
         </section>
         <div id="myMap" style="  margin-left: 1000px;margin-top: 140px;border-radius: 100%; width:600px;height:400px;"></div>
+        <p><span>   </span> </p>
         <!---------JavaScript for Toogle Menu---------->
         <script>
             var navLinks = document.getElementById("navLinks");

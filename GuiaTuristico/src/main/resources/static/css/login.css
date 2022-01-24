@@ -14,6 +14,19 @@ body {
         position: relative;
 }
 
+.title{
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.title h1{
+    position: absolute;
+    left: 15%;
+    background: white;
+    padding: 10px 10px 10px 10px;
+    border-radius: 15px;
+}
+
 nav{
     display: flex;
     padding: 2% 6%;

@@ -3,7 +3,7 @@ body {
     padding: 0;
     font-family:'DM Sans', sans-serif;
     background-color: #EFF4F8;
-    overflow: scroll;
+    overflow: hidden;
 }
 
 .header{
@@ -111,12 +111,12 @@ nav .fa{
 /*----Plan------*/
 .wrapper{
     position: absolute;
-    top: 50%;
+    top : 50%;
     left: 50%;
     transform: translate(-50%,-50%);
     width: 90%;
     display: flex;
-    margin-top: 20px;
+    margin-top: 50px;
     padding: 10px 10px 10px 10px;
   }
   
@@ -132,7 +132,7 @@ nav .fa{
     transform: translate(-50%,-50%);
 
   }
-  
+
 
 /*Second place*/
 
@@ -145,7 +145,7 @@ nav .fa{
     display: flex;
     padding: 10px 10px 10px 10px;
   }
-  
+
   .wrapper1 .right{
     width: 100%;
     background:white;
@@ -154,9 +154,9 @@ nav .fa{
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     border-radius: 20px;
-    
+
   }
-  
+
   .wrapper1 .right .info{
     margin-bottom: 25px;
   }
@@ -176,7 +176,7 @@ nav .fa{
     margin: 20px 10px 20px 10px;
     width: 80%;
     position: block;
-    
+
 
 }
 
@@ -189,7 +189,7 @@ nav .fa{
 .wrapper .right .rev .text .fas{
     display: inline-flex;
     margin-bottom: 10px;
-    
+
 }
 
 .wrapper .right .text .Ativ{
@@ -208,7 +208,7 @@ nav .fa{
     margin-left: 0px;
     padding: 5px 5px 5px 0px;
     border-radius: 20px;
-    
+
 }
 
 .wrapper .right .text .traco li{
@@ -218,7 +218,7 @@ nav .fa{
     margin: 10px 5px 5px 5px;
     padding: 5px 5px 5px 10px;
     border-radius: 20px;
-    
+
 }
 
 .wrapper .right .text .week{
@@ -269,7 +269,7 @@ font-family: 'DM Sans', sans-serif;
     color: #CC3333;
     align-content: left;
     margin-left: 10px;
-    
+
 }
 
 .wrapper1 .right .text li{
@@ -288,7 +288,7 @@ font-family: 'DM Sans', sans-serif;
     padding: 10px 0px 0px 5px;
     border-radius: 20px;
     color: #CC3333;
-    
+
 }
 
 .wrapper1 .right .rev .text .horario{

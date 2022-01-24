@@ -1,5 +1,8 @@
 <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
 <head>
+    <link rel="stylesheet" th:href="@{/css/plans.css}" />
     <link rel="stylesheet" href="../static/css/plans.css">
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <meta charset="UTF-8">
@@ -14,15 +17,23 @@
 <body>
 <section class="header">
     <nav>
-        <a href="Pg.html"><img src="../static/img/logo_deitado.png"></a>
+        <a href="Pg.html"><img src="../static/img/logo_deitado.png" th:src="@{img/logo_deitado.png}" alt=""></a>
         <div class="nav-links" id="navLinks">
             <i class="fa fa-times" onclick="hideMenu()"></i>
             <ul>
-                <li><i class="fas fa-home"></i><a href= "Pg.html" > Home</a></li>
-                <li><i class="fas fa-search"></i><a href= "search.html" > Search</a></li>
-                <li><i class="fas fa-calendar-alt"></i><a  href= "plans.css" > Plans</a></li>
-                <li><i class="fas fa-user-circle"></i><a href="myprofile.html">Profile</a></li>
-                <li><i class="fas fa-sign-out-alt"></i><a href="Pg.html">Sign-Out</a></li>
+                <li><i class="fas fa-home"></i><a href="Home">Home</a></li>
+                <li><i class="fas fa-search"></i><a href= "Search" >
+                    <span style= "display:inline">Search </span>
+                </a></li>
+                <li><i class="fas fa-calendar-alt"></i><a href= "Plans" >
+                    <span style= "display:inline">Planos </span>
+                </a></li>
+                <li><i class="fas fa-user-circle" ></i><a href= "Perfil" >
+                    <span style= "display:inline" >Perfil </span>
+                </a></li>
+                <li><i class="fas fa-user-minus" ></i><a href= "SignOut" >
+                    <span style= "display:inline" >SignOut </span>
+                </a></li>
             </ul>
         </div>
         <i class="fa fa-bars" onclick="showMenu()"></i>
@@ -30,7 +41,7 @@
 </section>
 
 <div class="title">
-    <h1>My Plans</h1>
+    <h1>My Plan</h1>
 </div>
 
 <section>
@@ -55,16 +66,4 @@
         </div>
     </div>
 </section>
-
-<div class="wrapper1">
-    <div class="right">
-        <div class="info">
-            <div class="rev">
-                <div class="text">
-                    <i class="fas fa-plus fa-3x"></i><li><strong>ADD</strong> PLAN </li>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 </body>
