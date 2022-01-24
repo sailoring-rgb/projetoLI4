@@ -42,4 +42,9 @@ public interface IGestUser {
     public List<Plan> get_plans_by_user(String userId);
 
     Place get_place(String placeID);
+
+    public void updateOnePlan(Plan p) throws SQLException;
+
+    public void updateOneReview(Review r) throws SQLException;
+
 }

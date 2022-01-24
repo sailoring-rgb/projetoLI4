@@ -162,9 +162,9 @@ public class GuiaTuristicoController {
         model.addAttribute("plan_saved", plan);
         Boolean create_plan = igestuser.create_plan(plan.getUserID(),plan.getName(),dateTimeS,dateTimeF,plan.getDay(),plan.getCity());
         if(create_plan) {
-            igestuser.updatePlan(plan);
+            igestuser.updateOnePlan(plan);
         } else {
-            igestuser.savePlan(plan);
+            igestuser.saveOnePlan(plan);
         }
         return "savePlan";
     }

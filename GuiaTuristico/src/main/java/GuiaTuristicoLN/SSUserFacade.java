@@ -212,7 +212,7 @@ public class SSUserFacade implements IGestUser {
         db.updateOnePlan(p);
     }
 
-    public void updateOneRevire(Review r) throws SQLException{
+    public void updateOneReview(Review r) throws SQLException{
         db.updateOneReview(r);
     }
 
