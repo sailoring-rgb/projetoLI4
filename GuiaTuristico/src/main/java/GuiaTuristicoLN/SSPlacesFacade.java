@@ -120,4 +120,11 @@ public class SSPlacesFacade implements IGestPlace {
     public List<Review> get_reviews_by_place(String placeId) {
         return (List<Review>) places.get(placeId).getReviews().values();
     }
+
+    public Place getOnePlace(String name){
+        for(Place p : this.places.values()){
+            if(p.getName().equals(name)) return p.clone();
+        }
+        return null;
+    }
 }

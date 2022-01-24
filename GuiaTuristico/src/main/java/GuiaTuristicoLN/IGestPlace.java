@@ -21,4 +21,6 @@ public interface IGestPlace {
     List<Place> filter_by_city(String  city);
 
     List<Review> get_reviews_by_place(String placeId);
+
+    Place getOnePlace(String name);
 }
