@@ -13,6 +13,8 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Map;
+import java.util.StringTokenizer;
+import java.util.stream.Collectors;
 
 @Controller
 public class GuiaTuristicoController {
@@ -98,6 +100,27 @@ public class GuiaTuristicoController {
         else return "loginNo";
     }
 
+    @GetMapping("/Place")
+    public String place(Model model){
+        List<Place> p = igestplaces.getPlaces().values().stream().map(Place::clone).collect(Collectors.toList());
+        model.addAttribute("places",p);
+        return "placeTable";
+    }
+
+
+    @GetMapping("/Place/{place_id}")
+    public String place(@PathVariable String place_id, Model model){
+        Place p = igestplaces.getOnePlace(place_id);
+        float classification = p.calculateClassification();
+        double lati  = RandomUtils.parseLatitude(p.getLocation());
+        double longi  = RandomUtils.parseLongitude(p.getLocation());
+        model.addAttribute("classification",classification);
+        model.addAttribute("lati",lati);
+        model.addAttribute("longi",longi);
+        model.addAttribute("place",p);
+        return "local";
+    }
+
     @GetMapping("/Perfil/{user_id}")
     public String perfil(@PathVariable String user_id, Model model){
         User u = igestuser.get_user(user_id);
@@ -119,12 +142,6 @@ public class GuiaTuristicoController {
         return "ReviewTable";
     }
 
-    @GetMapping("/Place/{place_id}")
-    public String place(@PathVariable String place_id, Model model){
-        Place p = igestplaces.getOnePlace(place_id);
-        model.addAttribute("place",p);
-        return "local";
-    }
 
     @GetMapping("/reviews/{user_id}/{place_id}")
     public String getUserPlaceReview(@PathVariable String user_id, @PathVariable String place_id, Model model){

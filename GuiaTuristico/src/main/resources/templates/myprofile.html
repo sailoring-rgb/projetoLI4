@@ -21,14 +21,14 @@
                 <div class="nav-links" id="navLinks">
                     <i class="fa fa-times" onclick="hideMenu()"></i>
                     <ul>
-                        <li><i class="fas fa-home"></i><a href="Home">Home</a></li>
-                        <li><i class="fas fa-search"></i><a href= "Search" >
+                        <li><i class="fas fa-home"></i><a href="../Home">Home</a></li>
+                        <li><i class="fas fa-search"></i><a href= "../Place" >
                             <span style= "display:inline">Search </span>
                         </a></li>
-                        <li><i class="fas fa-calendar-alt"></i><a href= "Plans" >
+                        <li><i class="fas fa-calendar-alt"></i><a href= "../Plans" >
                             <span style= "display:inline">Planos </span>
                         </a></li>
-                        <li><i class="fas fa-user-circle" ></i><a href= "Perfil" >
+                        <li><i class="fas fa-user-circle" ></i><a th:href= "'Perfil/' + ${perfil.id}" >
                             <span style= "display:inline" >Perfil </span>
                         </a></li>
                         <li><i class="fas fa-user-minus" ></i><a href= "../Home" >
@@ -70,7 +70,7 @@
                     </div>
                 </div>
             </div>
-
+        </div>
         <section>
             <title></title>
             <meta charset="utf-8" />

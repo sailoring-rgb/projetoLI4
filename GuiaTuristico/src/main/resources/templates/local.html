@@ -21,12 +21,9 @@
                 <div class="nav-links" id="navLinks">
                     <i class="fa fa-times" onclick="hideMenu()"></i>
                     <ul>
-                        <li><i class="fas fa-home"></i><a href="Home">Home</a></li>
-                        <li><i class="fas fa-search"></i><a href= "Search" >
+                        <li><i class="fas fa-home"></i><a href="../Home">Home</a></li>
+                        <li><i class="fas fa-search"></i><a href= "../Place" >
                             <span style= "display:inline">Search </span>
-                        </a></li>
-                        <li><i class="fas fa-calendar-alt"></i><a href= "Plans" >
-                            <span style= "display:inline">Planos </span>
                         </a></li>
                         <li><i class="fas fa-user-circle" ></i><a href= "Perfil" >
                             <span style= "display:inline" >Perfil </span>
@@ -57,12 +54,47 @@
                     <i class="fas fa-tag"></i><p  th:text= "${place.category}"></p>
                     </div>
                         <div class="classifica">
-                        <i class="far fa-star"></i><p  th:text= "${place.calculateClassification()}"></p>
+                        <i class="far fa-star"></i><p  th:text= "${classification}"></p>
                         </div>
                     </div>
 
             </div>
         </div>
+
+        <script>
+            function ShowIt(){
+                var obj = document.getElementById("hid");
+                if(obj.style.display == "block")
+                    obj.style.display = "none";
+                else
+                    obj.style.display = "block";
+            };
+        </script>
+
+
+        <section id = "hid">
+            <title></title>
+            <meta charset="utf-8" />
+
+            <script type='text/javascript'>
+                function GetMap() {
+                    var map = new Microsoft.Maps.Map('#myMap', {
+                        credentials: 'AiuJwX0Bz4xMIdSFEKHqIm1jVm9c7T263Mo9LrQwXviR7RNyGm81OhxmC_Fey8KW'
+                    });
+                    a = new Number(${longi});
+                    b = new Number(${longi});
+                function setMap(a,b) {
+                    map.setView({
+                        mapTypeId: Microsoft.Maps.MapTypeId.aerial,
+                        center: new Microsoft.Maps.Location(a, b),
+                        zoom: 15
+                    });
+                };
+                }
+            </script>
+            <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap' async defer></script>
+        </section>
+        <div id="myMap" style="  margin-left: 1000px;margin-top: 140px;border-radius: 100%; width:600px;height:400px;"></div>
 
     <section class="review">
         <div class="text">

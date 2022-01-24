@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <link rel="stylesheet" th:href="@{/css/login.css}" />
+    <link rel="stylesheet" href="../static/css/login.css">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <title>ask&SEEK</title>
+</head>
+<body>
+<section class="header">
+    <nav>
+        <a href="Home"><img src="../static/img/logo_deitado.png" th:src="@{img/logo_deitado.png}" alt=""></a>
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+                <li><i class="fas fa-home"></i><a href="Home">Home</a></li>
+                <li><i class="fas fa-search"></i><a href= "Place" >
+                    <span style= "display:inline">Search </span>
+                </a></li>
+                <li><i class="fas fa-sign-in-alt"></i><a href="Login"><span style= "display:inline" >Login </span></a></li>
+
+                </a></li>
+                <li><i class="fas fa-user-minus" ></i><a href= "Home" >
+                    <span style= "display:inline" >SignOut </span>
+                </a></li>
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+</section>
+<table>
+    <thead>
+    <tr>
+        <th> Place ID </th>
+        <th> Nome </th>
+        <th> Categoria </th>
+        <th> Localização </th>
+        <th> Cidade </th>
+        <th> Link </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${places.empty}">
+        <td colspan="2"> No Place Available </td>
+    </tr>
+    <tr th:each="place : ${places}">
+        <td><span th:text="${place.id}"> </span></td>
+        <td><span th:text="${place.name}"></span></td>
+        <td><span th:text="${place.category}"></span></td>
+        <td><span th:text="${place.location}"></span></td>
+        <td><span th:text="${place.city}"></span></td>
+        <td><a  th:href="'../Place/' + ${place.Id}"> Local </a></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
