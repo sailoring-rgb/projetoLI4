@@ -20,18 +20,16 @@
                     <ul>
                         <li><i class="fas fa-home"></i><a href="Home">Home</a></li>
                         <li><i class="fas fa-search"></i><a href= "Search" >
-                            <span th:style="${islogged ? 'display:inline' : 'display:block'}"}>Search </span>
+                            <span style= "display:inline">Search </span>
                         </a></li>
                         <li><i class="fas fa-calendar-alt"></i><a href= "Plans" >
-                            <span th:style="${islogged ? 'display:inline' : 'display:block'}"}>Planos </span>
+                            <span style= "display:inline">Planos </span>
                         </a></li>
-                        <li><i th:class="${islogged} ? 'fas fa-user-circle' : 'fas fa-sign-in-alt'"></i><a th:href="${islogged ? 'Perfil' : 'Login'}">
-                            <span th:style="${islogged ? 'display:none' : 'display:inline'}"}>Login </span>
-                            <span th:style="${islogged ? 'display:inline' : 'display:none'}"}>Perfil </span>
+                        <li><i class="fas fa-user-circle" ></i><a th:href="Perfil">
+                            <span style= "display:inline" >Perfil </span>
                         </a></li>
-                        <li><i th:class="${islogged} ? 'fas fa-user-minus' : 'fas fa-user-plus'"></i><a th:href="${islogged ? 'SignOut' : 'SignIn'}">
-                            <span th:style="${islogged ? 'display:none' : 'display:inline'}"}>SignUp> </span>
-                            <span th:style="${islogged ? 'display:inline' : 'display:none'}"}>SignOut </span>
+                        <li><i class="fas fa-user-minus" ></i><a th:href="SignOut">
+                        <span style= "display:inline" >SignOut </span>
                         </a></li>
                     </ul>
                 </div>
@@ -46,24 +44,24 @@
             <div class="wrapper1">
                 <div class="right">
                     <div class="info">
-                        <h3>Universidade do Minho - Campus de Gualtar</h3>
+                        <h3>Universidade do Minho - Campus de Gualtar <!--Nome do local --> </h3>
                         <div class="info_data">
                              <div class="data">
-                                <i class="fas fa-map-marker-alt"></i><h4>R. da Universidade, 4710-057 Braga</h4></div>
+                                <i class="fas fa-map-marker-alt"></i><h4>R. da Universidade, 4710-057 Braga <!--Coordenadas--> </h4></div>
                         </div>
                     </div>
                   
                     <div class="projects">
                         <div class="categoria">
-                        <i class="fas fa-tag"></i><p>Universidade</p>
+                        <i class="fas fa-tag"></i><p>Universidade <!--Categoria --></p>
                         </div>
                         <div class="classifica">
-                        <i class="far fa-star"></i><p>4,8 (465)</p>
+                        <i class="far fa-star"></i><p>4,8 (465) <!--Classificação média do local --> </p>
                         <div class="delete"><i class="fas fa-trash fa-2x"></i></div>
                         </div>
                         </div>
                         <div class="rev">
-                            <div class="text"><i class="far fa-star"></i><p>2</p><p>"Que merda de Universidade"</p></div>
+                            <div class="text"><i class="far fa-star"></i><p>2 <!--Avaliação do utilizador --></p><p>"Que merda de Universidade" <!--Comentário --></p></div>
                            </div>
                     </div>
             </div>
