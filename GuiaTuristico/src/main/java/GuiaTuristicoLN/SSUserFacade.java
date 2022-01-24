@@ -48,6 +48,10 @@ public class SSUserFacade implements IGestUser {
         db.savePlans(allPlans);
     }
 
+    public void saveUser(User u) throws SQLException {
+        db.saveOneUser(u);
+    }
+
     public boolean login(String id, String password) {
         boolean res = false;
         log.info(id);

@@ -34,4 +34,6 @@ public interface IGestUser {
     boolean register(String password, String name, String email);
 
     public List<Plan> get_plans_by_user(String userId);
+
+    public void saveUser(User u) throws SQLException;
 }

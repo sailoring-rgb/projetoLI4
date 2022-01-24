@@ -172,5 +172,4 @@ public class ConnectionDB {
         pStatement.setString(5, r.getPlaceId());
         pStatement.executeUpdate();
         }
-    }
 }
