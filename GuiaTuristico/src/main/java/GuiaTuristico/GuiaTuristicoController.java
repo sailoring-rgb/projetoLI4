@@ -88,7 +88,8 @@ public class GuiaTuristicoController {
     @PostMapping("/Login")
     public String logInYes(@ModelAttribute(value= "user" ) User user, Model model){
         Boolean is_log = igestuser.login(user.getId(),user.getPassword());
-        model.addAttribute("userYes",user);
+        User u = igestuser.get_user(user.getId());
+        model.addAttribute("userYes",u);
         model.addAttribute("islogged", is_log);
         if(is_log) {
             return "loginYes";
