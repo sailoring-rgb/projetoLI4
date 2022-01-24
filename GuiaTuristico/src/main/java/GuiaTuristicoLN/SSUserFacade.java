@@ -25,11 +25,23 @@ public class SSUserFacade implements IGestUser {
         Map<String,Plan> allPlans = new HashMap<>();
         Map.Entry<String,Review> rev;
         Map.Entry<String,Plan> pla;
+        Map<String,Review> auxR = null;
+        Map<String,Plan> auxP = null;
         for(User u : this.users.values()){
-            rev = u.getReviews().entrySet().iterator().next();
-            pla = u.getPlans().entrySet().iterator().next();
-            allRevs.put(u.getId(), rev.getValue().clone());
-            allPlans.put(u.getId(),pla.getValue().clone());
+            auxR =u.getReviews();
+            if( auxR != null) {
+                if (u.getReviews().entrySet().size() != 0) {
+                    rev = u.getReviews().entrySet().iterator().next();
+                    allRevs.put(u.getId(), rev.getValue().clone());
+                } else allRevs.put(u.getId(), null);
+            }
+            auxP = u.getPlans();
+            if(auxP != null) {
+                if (u.getPlans().entrySet().size() != 0) {
+                    pla = u.getPlans().entrySet().iterator().next();
+                    allPlans.put(u.getId(), pla.getValue().clone());
+                } else allPlans.put(u.getId(), null);
+            }
         }
         db.saveUsers(users);
         db.saveReviews(allRevs);
@@ -51,7 +63,7 @@ public class SSUserFacade implements IGestUser {
 
     public boolean register(String password, String name, String email) {
             int id = this.users.values().size()+1;
-            User user = new User(String.valueOf(id), password, name, email);
+            User user = new User(name, String.valueOf(id), password, email);
             this.users.put(String.valueOf(id), user.clone());
             return true;
     }
@@ -67,7 +79,6 @@ public class SSUserFacade implements IGestUser {
 
             if (plan != null) {
                 plansOfUser.put(plan.getName(),plan.clone());
-                //log.info(plan.getName());
             }
 
             if ( rev != null) {

@@ -1,11 +1,15 @@
 package GuiaTuristicoLN;
 
+import java.sql.SQLException;
+import java.text.ParseException;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 
 public interface IGestUser {
     Map<String, User> getUsers();
+
+    public void saveData() throws SQLException, ParseException;
 
     boolean create_review(String userId, String placeName, float classification, String comment);
 

@@ -59,7 +59,9 @@ public class User implements Reviewable {
     }
 
     public User() {
-
+        this.plans = new HashMap<>();
+        this.reviews = new HashMap<>();
+        this.favourites = new ArrayList<>();
     }
 
     public String getName() {

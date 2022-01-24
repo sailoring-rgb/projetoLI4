@@ -9,6 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
+import java.sql.SQLException;
+import java.text.ParseException;
 import java.util.List;
 import java.util.Map;
 
@@ -53,13 +55,15 @@ public class GuiaTuristicoController {
     }
 
     @PostMapping("/SignUp")
-    public String signUpyes(@ModelAttribute(value="signup") User user, Model model) {
+    public String signUpyes(@ModelAttribute(value="signup") User user, Model model) throws SQLException, ParseException {
         Boolean is_sign = igestuser.register(user.getPassword(), user.getName(), user.getEmail());
         model.addAttribute("signupsucess", user);
         model.addAttribute("islogged", true);
         String size = String.valueOf(igestuser.getUsers().size() + 1);
         user.setId(size);
+        log.info(user.getId());
         igestuser.getUsers().put(size, user);
+        //igestuser.saveData();
         model.addAttribute("userId", user.getId());
         return "SignUpYes";
     }
