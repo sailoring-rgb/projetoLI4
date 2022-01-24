@@ -69,27 +69,27 @@ public class Place implements Reviewable, Comparable {
         return this.city;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setId(String id){
+        this.id=id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String name){
+        this.name=name;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setCategory(String category){
+        this.category=category;
     }
 
-    public void setLocation(String location) {
+    public void setLocation(String location){
         this.location = location;
     }
 
-    public void setCity(String city) {
-        this.city = city;
+    public void setCity(String city){
+        this.city=city;
     }
 
-    public void setReviews(Map<String, Review> reviews) {
+    public void setReviews(Map<String,Review> reviews){
         this.reviews = new HashMap<>(reviews);
     }
 

@@ -2,8 +2,6 @@ package GuiaTuristico;
 
 import GuiaTuristicoLN.IGestUser;
 import GuiaTuristicoLN.User;
-import ch.qos.logback.classic.pattern.ClassOfCallerConverter;
-import org.slf4j.ILoggerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +11,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class GuiaTuristicoController {
@@ -48,7 +45,7 @@ public class GuiaTuristicoController {
     }
 
     @PostMapping("/SignUp")
-    public String signUpyes(@ModelAttribute(value = "signup") User user, Model model) {
+    public String signUpyes(@ModelAttribute(value="signup") User user, Model model) {
         model.addAttribute("signupsucess", user);
         model.addAttribute("islogged", true);
         String size = String.valueOf(igestuser.getUsers().size() + 1);
@@ -65,7 +62,7 @@ public class GuiaTuristicoController {
     }
 
     @PostMapping("/save_user")
-    public String greetingSubmit(@ModelAttribute(value = "user") User user, Model model) {
+    public String greetingSubmit(@ModelAttribute(value="user") User user, Model model) {
         log.info(user.getName());
         log.info(user.getId());
         log.info(user.getEmail());

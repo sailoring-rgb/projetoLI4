@@ -8,15 +8,15 @@
 <table>
     <thead>
     <tr>
-        <th> ID</th>
-        <th> Name</th>
-        <th> Email</th>
-        <th> Password</th>
+        <th> ID </th>
+        <th> Name </th>
+        <th> Email </th>
+        <th> Password </th>
     </tr>
     </thead>
     <tbody>
     <tr th:if="${books.empty}">
-        <td colspan="2"> No Books Available</td>
+        <td colspan="2"> No Books Available </td>
     </tr>
     <tr th:each="book : ${users}">
         <td><span th:text="${user.id}"> ID </span></td>

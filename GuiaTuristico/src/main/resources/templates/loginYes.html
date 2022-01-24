@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
-    <link rel="stylesheet" th:href="@{/css/login.css}"/>
+    <link rel="stylesheet" th:href="@{/css/login.css}" />
     <link rel="stylesheet" href="../static/css/login.css">
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <meta charset="UTF-8">
@@ -10,9 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-          integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
-          crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
     <title>ask&SEEK</title>
 </head>
 <body>
@@ -35,19 +33,20 @@
 </section>
 
 
-<p th:text="'Nome: ' + ${IGestUserDTO.nome}"/>
-<p th:text="'Password: ' + ${IGestUserDTO.password}"/>
+<p th:text="'Nome: ' + ${IGestUserDTO.nome}" />
+<p th:text="'Password: ' + ${IGestUserDTO.password}" />
+
+
 
 
 <!---------JavaScript for Toogle Menu---------->
 <script>
     var navLinks = document.getElementById("navLinks");
-
-    function showMenu() {
+    function showMenu(){
         navLinks.style.right = "0";
     }
 
-    function hideMenu() {
+    function hideMenu(){
         navLinks.style.right = "-200px";
     }
 </script>

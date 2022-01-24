@@ -18,29 +18,28 @@ public class SSUserFacade implements IGestUser {
 
     public SSUserFacade() throws SQLException, ClassNotFoundException {
         this.users = db.loadUsers();
-        for (User user : this.users.values()) {
-            Map<String, Plan> plansOfUser = new HashMap<>();      // chave: userId
-            Map<String, Review> reviewsOfUser = new HashMap<>();  // chave: userId
+        for(User user: this.users.values()){
+            Map<String,Plan> plansOfUser = new HashMap<>();      // chave: userId
+            Map<String,Review> reviewsOfUser = new HashMap<>();  // chave: userId
 
             Plan plan = db.loadPlans().get(user.getId());
             Review rev = db.loadReviews().get(user.getId());
 
             if (plan != null) {
-                plansOfUser.put(plan.getName(), plan.clone());
+                plansOfUser.put(plan.getName(),plan.clone());
                 //log.info(plan.getName());
             }
 
-            if (rev != null) {
-                reviewsOfUser.put(rev.getPlaceId(), rev.clone());
+            if ( rev != null) {
+                reviewsOfUser.put(rev.getPlaceId(),rev.clone());
             }
 
             user.setPlans(plansOfUser);
             user.setReviews(reviewsOfUser);
         }
-        for (User user : this.users.values()) {
-            for (Plan p : user.getPlans().values()) {
-                log.info(p.getName());
-            }
+        for(User user: this.users.values()){
+            for(Plan p: user.getPlans().values()){
+            log.info(p.getName());}
         }
     }
 
