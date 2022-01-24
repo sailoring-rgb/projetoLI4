@@ -129,6 +129,16 @@ public class GuiaTuristicoController {
         return "rev";
     }
 
+    @GetMapping("/plans/{user_id}")
+    public String getAllPlans(@PathVariable String user_id, Model model){
+        List<Plan> plans = igestuser.get_plans_by_user(user_id);
+        Plan plan = plans.get(0);
+        plan.setSTime(plan.getStartTime().toString());
+        plan.setFTime(plan.getFinishTime().toString());
+        model.addAttribute("plans",plan);
+        return "plans";
+    }
+
 
 
 }

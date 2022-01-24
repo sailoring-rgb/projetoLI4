@@ -13,6 +13,8 @@ public class Plan {
     private String day;
     private String city;
     private List<PlacePlanneable> places;
+    private String startTime;
+    private String finishTime;
 
     public Plan(String userId, String name, LocalDateTime start_time, LocalDateTime finish_time, String day, String city) {
         this.userId = userId;
@@ -76,6 +78,18 @@ public class Plan {
 
     public String getCity() {
         return this.city;
+    }
+
+    public String getSTime(){ return this.startTime;}
+
+    public String getFTime(){ return this.finishTime;}
+
+    public void setSTime(String sTime){
+        this.startTime = sTime;
+    }
+
+    public void setFTime(String fTime){
+        this.finishTime = fTime;
     }
 
     public List<PlacePlanneable> getPlaces() {
