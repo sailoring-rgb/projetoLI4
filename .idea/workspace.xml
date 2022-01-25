@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6da5abc4-d0af-4739-8932-0ce8e9c8161d" name="Changes" comment="" />
+    <list default="true" id="6da5abc4-d0af-4739-8932-0ce8e9c8161d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/SAddAndSeekFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/SAddAndSeekFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/SSUserFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/GuiaTuristico/src/main/java/GuiaTuristicoLN/SSUserFacade.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,6 +53,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/fase2" />
       <recent name="C:\Users\ASUS\OneDrive\Ambiente de Trabalho\LI4\projetoLI4\GuiaTuristico\src\main\resources\templates" />
     </key>
   </component>
@@ -92,5 +97,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
