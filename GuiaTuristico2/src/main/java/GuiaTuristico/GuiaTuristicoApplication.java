@@ -13,7 +13,7 @@ import org.springframework.web.client.RestTemplate;
 import java.sql.SQLException;
 
 @SpringBootApplication
-public class GuiaTuristicoApplication extends SpringBootServletInitializer {
+public class hGuiaTuristicoApplication extends SpringBootServletInitializer {
 
 	@Bean
 	public IGestUser sSUserFacadeConfiguration() throws SQLException, ClassNotFoundException {
