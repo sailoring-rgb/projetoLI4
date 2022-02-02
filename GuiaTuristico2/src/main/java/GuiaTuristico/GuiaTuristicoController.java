@@ -175,12 +175,17 @@ public class GuiaTuristicoController {
     public String getAllPlans(@PathVariable String user_id, Model model){
         List<Plan> plans = igestuser.get_plans_by_user(user_id);
         User u = igestuser.get_user(user_id);
-        Plan plan = plans.get(0);
-        plan.setSTime(plan.getStartTime().toString());
-        plan.setFTime(plan.getFinishTime().toString());
-        model.addAttribute("user",u);
-        model.addAttribute("plan",plan);
-        return "plan";
+        model.addAttribute("user", u);
+        if (plans.size() > 0) {
+            if (plans.get(0) != null) {
+                Plan plan = plans.get(0);
+                plan.setSTime(plan.getStartTime().toString());
+                plan.setFTime(plan.getFinishTime().toString());
+                model.addAttribute("plan", plan);
+                return "plan";
+            }
+        }
+        return "planEmpty";
     }
 
     //Page to create a place

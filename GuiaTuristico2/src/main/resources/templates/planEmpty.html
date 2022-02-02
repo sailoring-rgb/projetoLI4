@@ -43,27 +43,17 @@
 <div class="title">
     <h1>My Plan</h1>
 </div>
-
 <section>
-    <div class="wrapper">
-        <div class="right">
-            <div class="delete"><i class="fas fa-trash fa-2x"></i></div>
+<section class="wrapper1">
+    <div class="right">
+        <div class="info">
             <div class="rev">
-                <div class="text"><i class="fas fa-calendar-check fa-3x"></i>
-                    <div class="Ativ">
-                        <li th:text = "${plan.name}"></li>
-                    </div>
-                    <div class="traco">
-                        <li>-</li>
-                    </div>
-                    <div class = "week">
-                        <strong><li th:text = "${plan.day}"></li></strong>
-                    </div>
-                    <div class = "horario">
-                        <li><span th:text = "${plan.startTime}"></span> <span> - </span><span th:text =" ${plan.finishTime}"></span></li></div>
+                <div class="text">
+                    <i class="fas fa-plus fa-3x"></i><li><strong>ADD</strong> PLAN </li>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
 </body>
