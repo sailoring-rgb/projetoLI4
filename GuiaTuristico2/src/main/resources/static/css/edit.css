@@ -1,0 +1,222 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family:'DM Sans', sans-serif;
+    background-color: #EFF4F8;
+    overflow: scroll;
+}
+
+.header{
+        min-height: 15vh;
+        background-color: #CC3333;
+        background-position: center;
+        background-size: cover;
+        position: absolute;
+        width: 100%;
+}
+
+nav{
+    display: inline-flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items:center;
+}
+nav img{
+    width: 300px;
+}
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+.nav-links ul li{
+    list-style:none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-links ul li a{
+    color: black;
+    text-decoration: none;
+    font-size: 15px;
+    margin-left: 5px;
+}
+
+.nav-links ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: black;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-links ul li:hover::after{
+    width: 100%;
+}
+
+nav .fa{
+    display: none;
+}
+
+.active {
+    background-color: white;
+}
+
+/* Profile Css*/
+
+.wrapper{
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 800px;
+    display: inline-flex;
+  }
+  
+  .wrapper .left{
+    width: 50%;
+    background: #EFF4F8;
+    padding: 30px 25px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    /*text-align:center;*/
+  }
+  
+  .wrapper .left .text{
+    width: fit-content;
+    list-style: none;
+    background: white;
+    padding: 10px 6px 10px 10px;
+    border-radius: 20px;
+  }
+
+  .wrapper .left .text .Ativ{
+    background-color: white;
+    display: inline-flex;
+  }
+
+  .wrapper .left .text .traco{
+    background-color: white;
+    display: inline-flex;
+  }
+
+  .wrapper .left .text .week{
+    background-color: white;
+    display: inline-flex;
+  }
+
+  .wrapper .left .time{
+    width: 40%;
+    margin-left: 105px;
+  }
+  
+  .wrapper .left h4{
+    margin-bottom: 10px;
+    background-color: #6B6B6B;
+    color: white;
+    padding: 5px 0px 5px 5px;
+    border-radius: 20px;
+    text-align: center;
+  }
+  
+  .wrapper .left p{
+    font-size: 12px;
+    color: #CC3333;
+    text-align: center;
+  }
+  
+  .wrapper .right{
+    width: 40%;
+    background:#EFF4F8;
+    padding: 30px 25px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  
+  .wrapper .right .info,
+  .wrapper .right .projects{
+    margin-bottom: 25px;
+  }
+
+  
+  .wrapper .right .info h3,
+  .wrapper .right .projects h3{
+      margin-bottom: 15px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid #e0e0e0;
+      color: #CC3333;
+  }
+  
+  .wrapper .right .info_data{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .wrapper .right .projects{
+    display: inline;
+    justify-content: space-between;
+    background-color: white;
+  }
+  
+  .wrapper .right .info_data .data h4{
+    color: #353c4e;
+    margin-bottom: 5px;
+  }
+
+  .wrapper .right .projects .projects_data{
+    width: 400px;
+    height: 300px;
+    background: white;
+    color: black;
+    border-radius:10px;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .wrapper .right .projects .projects_data .place1,
+  .wrapper .right .projects .projects_data .place2,
+  .wrapper .right .projects .projects_data .place3
+  {
+    border: 1px solid black;
+    height: fit-content;
+    margin-bottom:1px ;
+    
+  }
+
+  .wrapper .right .projects .projects_data h4{
+      display: inline-flex;
+      margin: 10px 10px 10px 10px;
+      padding: 10px 10px 10px 10px;
+  }
+
+  .wrapper .right .projects .projects_data .addres .fas,
+  .wrapper .right .projects .projects_data .addres p{
+    display:inline;
+    width: 300px;
+    margin-top: 10px;
+    padding: 10px 10px 10px 10px;
+    color: green;
+    
+  }
+
+  .wrapper .right .info_data .data p{
+    font-size: 13px;
+    margin-bottom: 10px;
+    color: #CC3333;
+  }
+
+
+
+.wrapper .alter{
+      color: white;
+      font-size: 20px;
+      background-color: #CC3333;
+      padding: 10px 10px 10px 10px;
+      border-radius: 20px;
+      text-align: center;
+  }
+
+  .wrapper .right .day{
+      color: #CC3333;
+      font-size: 12px;
+  }
