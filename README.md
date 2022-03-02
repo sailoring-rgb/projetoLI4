@@ -3,7 +3,7 @@
 
 Projeto de Laboratórios de Informática IV
 
-Classificação do projeto: .../20
+Classificação do projeto: 12/20
 
 # Autores
 
