@@ -1,15 +1,15 @@
 
 # LI4
 
-Projeto de Laboratórios de Informática IV
+Project accomplished in the scope of <b><i>Informatic Laboratories IV</i></b>
 
-Classificação do projeto: 12/20
+Final Classification: 12/20
 
-# Autores
+# Authors
 
-- Ana Murta
-- Ana Henriques
-- Leonardo Freitas
-- Rui Coelho
-- Tiago Carneiro
+- <a href="https://github.com/AnaMurta10">Ana Murta</a>
+- <a href="https://github.com/sailoring-rgb">Ana Henriques</a>
+- <a href="https://github.com/Leonardo1924">Leonardo Freitas</a>
+- <a href="https://github.com/ruipgcoelho">Rui Coelho</a>
+- <a href="https://github.com/Tiago5Carneiro">Tiago Carneiro</a>
 
